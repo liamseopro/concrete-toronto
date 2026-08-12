@@ -1,0 +1,95 @@
+---
+import InnerPage from '../../../components/InnerPage.astro';
+
+const faqs = [
+  {
+    q: 'What exactly is parging?',
+    a: 'Parging is a thin coat of cement-based mortar applied to the exposed part of a foundation or masonry wall. It creates a smooth, uniform surface that protects against moisture and weather while giving the building a clean, finished look.',
+  },
+  {
+    q: 'Which walls can you parge?',
+    a: 'We parge walls, basements and more: exposed foundation walls above grade, interior basement walls, porch bases and other masonry surfaces that need protection or a tidier finish.',
+  },
+  {
+    q: 'Does parging help protect against water?',
+    a: 'Yes. A sound parge coat sheds surface water and pairs with our waterproofing services to protect concrete foundations from water damage. For active leaks, we will tell you honestly whether waterproofing is the real fix.',
+  },
+  {
+    q: 'Can you repair old, flaking parging?',
+    a: 'Yes. We remove the loose, failing material, prep the surface properly and apply a fresh coat. If the old coat is letting go across most of the wall, a full removal and recoat lasts far longer than chasing patches.',
+  },
+  {
+    q: 'What time of year can you parge?',
+    a: 'Roughly spring through late fall, whenever temperatures stay above freezing while the coat cures. If you spot damage over the winter, get your quote in early and we will book the first workable weather.',
+  },
+];
+---
+
+<InnerPage
+  title="Parging Services in Toronto & the GTA | Concrete Toronto"
+  description="Parging services across Toronto and the GTA: foundation walls, basements and more, with waterproofing to protect against water damage. 2-year warranty. Free quotes."
+  canonical="https://concrete-toronto.ca/services/parging/"
+  extraSchema={[{
+    '@type': 'Service',
+    '@id': 'https://concrete-toronto.ca/services/parging/#service',
+    name: 'Parging Services',
+    serviceType: 'Parging installation and repair',
+    description: 'Parging for foundation walls, basements and masonry surfaces across Toronto and the Greater Toronto Area, with waterproofing, backed by a 2-year warranty.',
+    provider: { '@id': 'https://concrete-toronto.ca/#business' },
+    areaServed: 'Greater Toronto Area',
+    url: 'https://concrete-toronto.ca/services/parging/',
+  }]}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: 'Parging Services' }]}
+  kicker="Parging services · Toronto & GTA"
+  h1="Parging that"
+  h1Em="protects"
+  sub="We parge walls, basements and more across Toronto and the GTA, keeping your buildings protected and looking finished. 2-year warranty, free quotes."
+  sideIntro="Tell us about your walls and we'll send a clear, written quote."
+  galleryHeading="Recent concrete work"
+  gallery={[
+    { src: '/assets/img/concrete-walkway-broom-finish-toronto.jpg', width: 1319, height: 1600, alt: 'Broom-finish concrete along the foundation wall of a Toronto house' },
+    { src: '/assets/img/concrete-sidewalk-side-yard-toronto.jpg', width: 1524, height: 1600, alt: 'Concrete sidewalk along a Toronto house wall', cls: 'wide' },
+    { src: '/assets/img/concrete-hand-trowel-finishing-toronto.jpg', width: 1600, height: 1066, alt: 'Hand trowel finishing a cement surface in Toronto' },
+  ]}
+  relatedKicker="Related services"
+  relatedHeading="More ways we can help"
+  related={[
+    { href: '/services/concrete-foundations/', title: 'Concrete Foundations', text: 'Foundation work and waterproofing' },
+    { href: '/services/concrete-repair/', title: 'Concrete Repair', text: 'Surface repairs for concrete and coatings' },
+    { href: '/services/concrete-porches/', title: 'Concrete Porches', text: 'Porch bases and entrances' },
+    { href: '/services/concrete-steps/', title: 'Concrete Steps', text: 'Steps that pair with a fresh parge coat' },
+  ]}
+  quoteIntro="Send a few details about your walls and we'll come back with a clear, written estimate."
+  messagePlaceholder="e.g. The parge coat on my foundation is flaking on two sides"
+  faqHeading="Parging questions, answered"
+  faqs={faqs}
+  finalCtaText="Tell us about your walls and we'll send a free written quote. No pressure, no surprises."
+>
+  <p>Parging is the thin cement-based coat on the exposed band of your foundation, and it does two jobs at once: it shields the wall from moisture and weather, and it gives the base of the building a clean, finished look. <a href="/">Concrete Toronto</a> parges walls, basements and more across Toronto and the GTA, keeping your buildings protected and presentable.</p>
+
+  <p>When a parge coat starts to crack, flake or bubble, the wall underneath takes the weather directly. Water works in behind the loose coat, frost pries it further, and by spring the patches have become sheets. Catching it early is a small, quick job. Waiting means more prep and a bigger repair.</p>
+
+  <h2>What's included in our parging service</h2>
+  <p>Every parging job is priced as a complete package in a written quote:</p>
+  <ul>
+    <li><strong>Foundation wall parging</strong> on the exposed band above grade</li>
+    <li><strong>Basement parging</strong> for interior walls that need a clean, sealed finish</li>
+    <li><strong>Parging repair</strong> for cracks, flaking and sections that have let go</li>
+    <li><strong>Proper prep</strong>: loose material removed, surface cleaned, coat bonded so it stays put</li>
+    <li><strong>Waterproofing</strong> to protect concrete foundations from water damage</li>
+    <li><strong>Full cleanup</strong> when the work is done</li>
+  </ul>
+
+  <h2>Parging and waterproofing together</h2>
+  <p>Parging sheds surface water, but it is not a substitute for waterproofing where water is actively getting in. We provide waterproofing services to protect concrete foundations from water damage, and we will tell you plainly which one your wall needs. Often the right answer is both: waterproof where the water pressure is, parge where the wall shows.</p>
+
+  <h2>Why homeowners choose us</h2>
+  <p>Concrete and parging are the same trade to us: cement, prep and patience. 15 years of local work, a 2-year warranty, and a satisfaction guarantee on every job.</p>
+  <ul>
+    <li>2-year warranty on our work</li>
+    <li>Satisfaction guaranteed</li>
+    <li>Free, no-obligation quotes</li>
+  </ul>
+
+  <p>We parge across the GTA, from Toronto to <a href="/locations/scarborough/">Scarborough</a> and <a href="/locations/richmond-hill/">Richmond Hill</a>. See every area on our <a href="/locations/">service areas</a> page.</p>
+</InnerPage>

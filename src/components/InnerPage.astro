@@ -1,0 +1,180 @@
+---
+// Shared inner-page shell for service and location pages: page hero with
+// breadcrumbs, prose + sticky side card, optional mini gallery, related links,
+// quote form, FAQ accordion and final CTA. FAQ and Breadcrumb JSON-LD are
+// generated here from the same props that render the visible copy, so the two
+// can never drift apart. Page-specific schema (Service etc.) comes in via
+// extraSchema.
+
+import Base from '../layouts/Base.astro';
+import QuoteForm from './QuoteForm.astro';
+import { faqSchema, breadcrumbSchema } from '../data/site.js';
+
+interface Crumb { label: string; href?: string }
+interface Faq { q: string; a: string }
+interface Related { href: string; title: string; text: string }
+interface GalleryImg { src: string; alt: string; width: number; height: number; cls?: string }
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogTitle?: string;
+  geo?: boolean;
+  geoPlacename?: string;
+  geoLat?: number;
+  geoLon?: number;
+  extraSchema?: object[];
+  crumbs: Crumb[];
+  kicker: string;
+  h1: string;
+  h1Em?: string;
+  sub: string;
+  sideIntro: string;
+  galleryHeading?: string;
+  gallery?: GalleryImg[];
+  relatedKicker: string;
+  relatedHeading: string;
+  related: Related[];
+  quoteIntro: string;
+  messagePlaceholder: string;
+  cityPlaceholder?: string;
+  faqHeading: string;
+  faqs: Faq[];
+  finalCtaText: string;
+}
+
+const p = Astro.props;
+
+const jsonld = [
+  ...(p.extraSchema ?? []),
+  breadcrumbSchema(p.crumbs),
+  faqSchema(p.faqs),
+];
+---
+
+<Base
+  title={p.title}
+  description={p.description}
+  canonical={p.canonical}
+  ogTitle={p.ogTitle}
+  geo={p.geo}
+  geoPlacename={p.geoPlacename}
+  geoLat={p.geoLat}
+  geoLon={p.geoLon}
+  jsonld={jsonld}
+>
+
+<!-- ============== PAGE HERO ============== -->
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      {p.crumbs.map((c, i) => (
+        <>
+          {i > 0 && <span class="sep">/</span>}
+          {c.href ? <a href={c.href}>{c.label}</a> : <span class="here">{c.label}</span>}
+        </>
+      ))}
+    </nav>
+    <p class="kicker">{p.kicker}</p>
+    <h1>{p.h1}{p.h1Em && <> <span class="em">{p.h1Em}</span></>}</h1>
+    <p class="sub">{p.sub}</p>
+    <div class="hero-cta">
+      <a href="#quote" class="btn btn-primary">Get My Free Quote <span class="arrow">→</span></a>
+    </div>
+    <div class="hero-badges">
+      <span class="hbadge"><span class="tick">✓</span> 2-Year Warranty</span>
+      <span class="hbadge"><span class="tick">✓</span> Satisfaction Guaranteed</span>
+      <span class="hbadge"><span class="tick">✓</span> On Schedule, Every Time</span>
+      <span class="hbadge"><span class="tick">✓</span> 15 Years of Local Experience</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== MAIN CONTENT ============== -->
+<section class="section">
+  <div class="wrap">
+    <div class="content-grid">
+      <div class="prose">
+        <slot />
+      </div>
+      <aside class="side-card reveal">
+        <h3>Get a free quote</h3>
+        <p>{p.sideIntro}</p>
+        <ul>
+          <li><span class="tick">✓</span> Free, no-obligation estimate</li>
+          <li><span class="tick">✓</span> 2-year warranty on our work</li>
+          <li><span class="tick">✓</span> Satisfaction guaranteed</li>
+        </ul>
+        <a href="#quote" class="btn btn-primary">Get My Free Quote</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+{p.gallery && p.gallery.length > 0 && (
+  <section class="section work" style="padding-block: clamp(48px, 6vw, 84px);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Our work</p>
+        <h2>{p.galleryHeading ?? 'Recent concrete work'}</h2>
+      </div>
+      <div class="gallery" style="grid-auto-rows: 240px;">
+        {p.gallery.map((g) => (
+          <div class:list={['gtile', 'reveal', g.cls]}>
+            <img src={g.src} width={g.width} height={g.height} alt={g.alt} loading="lazy" decoding="async" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- ============== RELATED LINKS ============== -->
+<section class="section related">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">{p.relatedKicker}</p>
+      <h2>{p.relatedHeading}</h2>
+    </div>
+    <div class="related-grid">
+      {p.related.map((r) => (
+        <a class="svc-card reveal" href={r.href}><span class="mk">→</span><span class="body"><strong>{r.title}</strong><span>{r.text}</span></span><span class="go">→</span></a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<QuoteForm intro={p.quoteIntro} messagePlaceholder={p.messagePlaceholder} cityPlaceholder={p.cityPlaceholder} />
+
+<!-- ============== FAQ ============== -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <p class="kicker center">Good to know</p>
+      <h2>{p.faqHeading}</h2>
+    </div>
+
+    <div class="faq-list reveal">
+      {p.faqs.map((f) => (
+        <div class="faq-item">
+          <button class="faq-q">{f.q} <span class="pm">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">{f.a}</div></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ============== FINAL CTA ============== -->
+<section class="section final">
+  <div class="wrap">
+    <h2 class="reveal">Get your free quote today</h2>
+    <p class="reveal">{p.finalCtaText}</p>
+    <div class="btns reveal">
+      <a href="#quote" class="btn btn-light">Get My Free Quote</a>
+    </div>
+  </div>
+</section>
+
+</Base>

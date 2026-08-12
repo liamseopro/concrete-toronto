@@ -1,0 +1,95 @@
+---
+import InnerPage from '../../../components/InnerPage.astro';
+
+const faqs = [
+  {
+    q: 'Can crumbling concrete steps be repaired?',
+    a: 'If the damage is surface scaling or a chipped nosing here and there, a repair can restore them. If the steps are crumbling through, rocking, or the risers are uneven, replacement is safer and usually not much more money. We will tell you honestly which one your steps need.',
+  },
+  {
+    q: 'What makes a set of steps safe?',
+    a: 'Consistent riser heights, adequate tread depth, and a textured, slip-resistant surface. Uneven risers are the classic trip hazard, and we form every step to a consistent dimension.',
+  },
+  {
+    q: 'Can you match new steps to my existing porch?',
+    a: 'Yes. We form and pour the steps to meet the porch at the right height and width, with a matching finish, so the whole entrance reads as one piece.',
+  },
+  {
+    q: 'Do I need railings on my front steps?',
+    a: 'It depends on the rise. Where local code requires a guard or handrail, we flag it during the quote so your finished steps are compliant.',
+  },
+  {
+    q: 'How long before I can use new steps?',
+    a: 'Light foot traffic after 24 to 48 hours, normal use after about a week. We leave clear curing guidance and make sure you have safe access in the meantime.',
+  },
+];
+---
+
+<InnerPage
+  title="Concrete Steps in Toronto & the GTA | Concrete Toronto"
+  description="Concrete step repair and replacement across Toronto and the GTA. Safe, even front and back steps backed by a 2-year warranty. Free quotes."
+  canonical="https://concrete-toronto.ca/services/concrete-steps/"
+  extraSchema={[{
+    '@type': 'Service',
+    '@id': 'https://concrete-toronto.ca/services/concrete-steps/#service',
+    name: 'Concrete Steps',
+    serviceType: 'Concrete step installation and repair',
+    description: 'Concrete step repair and replacement across Toronto and the Greater Toronto Area, backed by a 2-year warranty.',
+    provider: { '@id': 'https://concrete-toronto.ca/#business' },
+    areaServed: 'Greater Toronto Area',
+    url: 'https://concrete-toronto.ca/services/concrete-steps/',
+  }]}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: 'Concrete Steps' }]}
+  kicker="Concrete steps · Toronto & GTA"
+  h1="Steps that are"
+  h1Em="solid & even"
+  sub="Concrete step repair and replacement across Toronto and the GTA. Safe, consistent risers, slip-resistant finish, 2-year warranty. Free quotes."
+  sideIntro="Tell us about your steps and we'll send a clear, written quote."
+  galleryHeading="Recent concrete work"
+  gallery={[
+    { src: '/assets/img/concrete-slab-front-entrance-toronto.jpg', width: 1198, height: 1600, alt: 'Concrete steps and slab at the front entrance of a Toronto home' },
+    { src: '/assets/img/new-concrete-front-walkway-toronto.jpg', width: 1200, height: 1600, alt: 'New concrete walkway meeting porch steps at a Toronto home', cls: 'wide' },
+    { src: '/assets/img/curved-concrete-walkway-entrance-toronto.jpg', width: 1280, height: 1600, alt: 'Curved concrete walkway at a Toronto front entrance' },
+  ]}
+  relatedKicker="Related services"
+  relatedHeading="More ways we can help"
+  related={[
+    { href: '/services/concrete-porches/', title: 'Concrete Porches', text: 'Repair or rebuild the porch the steps lead to' },
+    { href: '/services/concrete-walkways/', title: 'Concrete Walkways', text: 'A walkway that meets the bottom step' },
+    { href: '/services/parging/', title: 'Parging Services', text: 'A clean finish on step sides and foundations' },
+    { href: '/services/concrete-replacement/', title: 'Concrete Replacement', text: 'Full replacement of a failed entrance' },
+  ]}
+  quoteIntro="Send a few details about your steps and we'll come back with a clear, written estimate."
+  messagePlaceholder="e.g. Front steps are crumbling, four risers up to the porch"
+  faqHeading="Concrete step questions, answered"
+  faqs={faqs}
+  finalCtaText="Tell us about your steps and we'll send a free written quote. No pressure, no surprises."
+>
+  <p>Concrete steps are a safety item as much as a building element. When nosings chip, risers go uneven or the whole flight starts to rock, every trip to the door carries a little risk. <a href="/">Concrete Toronto</a> repairs and replaces concrete steps across Toronto and the GTA, front entrances and back doors alike.</p>
+
+  <p>Steps fail from the edges in. Water sits on the tread, frost works on the nosing, and de-icing salt accelerates the surface breakdown. We form new steps with consistent risers, proper tread depth and a broom finish for grip, and we rebuild the base so the flight does not settle out of level.</p>
+
+  <h2>What's included in our concrete step service</h2>
+  <p>Every step job is priced as a complete package in a written quote:</p>
+  <ul>
+    <li><strong>An honest assessment</strong>: repair where the structure is sound, replace where it is not</li>
+    <li><strong>Removal and disposal</strong> of the old steps where replacement is needed</li>
+    <li><strong>Base preparation</strong> so the new flight stays level</li>
+    <li><strong>Consistent risers and full-depth treads</strong> formed to your door height</li>
+    <li><strong>A broom finish</strong> for grip in wet and icy weather</li>
+    <li><strong>Full cleanup</strong> and curing guidance before we leave</li>
+  </ul>
+
+  <h2>Part of the whole entrance</h2>
+  <p>Steps rarely exist alone. They meet a <a href="/services/concrete-porches/">porch</a> at the top and a <a href="/services/concrete-walkways/">walkway</a> at the bottom, and the step sides often take a <a href="/services/parging/">parge coat</a> for a clean finish. Our crew handles all of it in one visit, one quote and one schedule.</p>
+
+  <h2>Why homeowners choose us</h2>
+  <p>We have poured concrete across Toronto for 15 years. You get a straight answer on repair versus replacement, a written price, and a crew that shows up on schedule.</p>
+  <ul>
+    <li>2-year warranty on every job</li>
+    <li>Satisfaction guaranteed</li>
+    <li>Free, no-obligation quotes</li>
+  </ul>
+
+  <p>We build steps across the GTA, from Toronto to <a href="/locations/scarborough/">Scarborough</a> and <a href="/locations/markham/">Markham</a>. See every area on our <a href="/locations/">service areas</a> page.</p>
+</InnerPage>

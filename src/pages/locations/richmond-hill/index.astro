@@ -1,0 +1,98 @@
+---
+import InnerPage from '../../../components/InnerPage.astro';
+
+const faqs = [
+  {
+    q: 'How much does concrete work cost in Richmond Hill?',
+    a: 'It depends on the size of the job and how much prep the site needs. Every quote from Concrete Toronto is free and in writing, so you know the exact price before any work starts.',
+  },
+  {
+    q: 'Can you match a new walkway to my existing driveway?',
+    a: 'Yes. We match finish and layout so new concrete reads as part of the same frontage. Fresh concrete cures lighter and darkens as it weathers, so it blends further over the first few seasons.',
+  },
+  {
+    q: 'Do you pour backyard patios on sloped yards?',
+    a: 'Yes. Sloped yards are common in Richmond Hill, and we handle the grading so the patio sits level and water drains away from the house. Where a step down is needed, we pour that too.',
+  },
+  {
+    q: 'How long does a typical Richmond Hill driveway job take?',
+    a: 'Most driveway replacements are a few days on site plus curing time. We confirm the schedule in writing before we start, and we stick to it.',
+  },
+  {
+    q: 'How do I get a quote?',
+    a: 'Fill out the free quote form and we will get back to you with an estimate. Prefer to talk? Call us at (416) 489-4898.',
+  },
+];
+---
+
+<InnerPage
+  title="Concrete Contractor in Richmond Hill | Concrete Toronto"
+  description="Concrete driveways, patios, walkways, porches, steps and slabs in Richmond Hill. 2-year warranty, free quotes. Call (416) 489-4898."
+  canonical="https://concrete-toronto.ca/locations/richmond-hill/"
+  geo
+  geoPlacename="Richmond Hill, Ontario"
+  geoLat={43.8828}
+  geoLon={-79.4403}
+  extraSchema={[{
+    '@type': 'Service',
+    name: 'Concrete Contractor in Richmond Hill',
+    serviceType: 'Concrete installation, repair and parging',
+    description: 'Concrete driveways, patios, walkways, sidewalks, porches, steps, foundations, slabs, repair, replacement and parging for homes and businesses across Richmond Hill, Ontario. 2-year warranty and free quotes.',
+    provider: { '@id': 'https://concrete-toronto.ca/#business' },
+    areaServed: { '@type': 'City', name: 'Richmond Hill, Ontario' },
+    url: 'https://concrete-toronto.ca/locations/richmond-hill/',
+  }]}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Service Areas', href: '/locations/' }, { label: 'Richmond Hill' }]}
+  kicker="Serving Richmond Hill"
+  h1="Concrete work in"
+  h1Em="Richmond Hill"
+  sub="Concrete driveways, patios, walkways, porches and steps across Richmond Hill, on mature streets and newer subdivisions alike, backed by a 2-year warranty."
+  sideIntro="Tell us about your Richmond Hill project and we'll send a clear, written quote."
+  cityPlaceholder="e.g. Richmond Hill"
+  galleryHeading="Recent concrete work"
+  gallery={[
+    { src: '/assets/img/concrete-hand-trowel-finishing-toronto.jpg', width: 1600, height: 1066, alt: 'Hand trowel finishing fresh concrete at a Richmond Hill area home' },
+    { src: '/assets/img/concrete-driveway-fresh-pour-toronto.jpg', width: 1244, height: 1600, alt: 'Freshly poured concrete driveway at a Richmond Hill area home', cls: 'wide' },
+    { src: '/assets/img/concrete-walkway-broom-finish-toronto.jpg', width: 1319, height: 1600, alt: 'Broom-finish concrete walkway at a Richmond Hill home' },
+  ]}
+  relatedKicker="Nearby & related"
+  relatedHeading="More ways we can help"
+  related={[
+    { href: '/services/concrete-driveways/', title: 'Concrete Driveways', text: 'New pours and full replacements' },
+    { href: '/services/concrete-patios/', title: 'Concrete Patios', text: 'Backyard patios, level and sloped yards' },
+    { href: '/services/concrete-slabs/', title: 'Concrete Slabs', text: 'Shed, garage and addition slabs' },
+    { href: '/locations/markham/', title: 'Markham', text: 'Concrete work next door in Markham' },
+    { href: '/locations/vaughan/', title: 'Vaughan', text: 'Concrete work in Vaughan' },
+  ]}
+  quoteIntro="Send us a few details about your Richmond Hill home and we'll reply with a straightforward written quote."
+  messagePlaceholder="e.g. New backyard patio on a sloped yard, plus a side walkway"
+  faqHeading="Concrete work in Richmond Hill, answered"
+  faqs={faqs}
+  finalCtaText="Tell us about your Richmond Hill project through the form and we'll send a free written quote. No pressure, no surprises."
+>
+  <p>Richmond Hill has a bit of everything for a concrete crew: mature streets off Yonge with driveways poured decades ago, newer subdivisions up toward Elgin Mills with flatwork that is aging faster than it should, and plenty of sloped yards that need careful grading before a patio or walkway goes in. <a href="/">Concrete Toronto</a> works across all of it, and we back each job with a 2-year warranty.</p>
+
+  <p>Grading matters more here than most places. On a sloped lot, water that runs the wrong way ends up at your foundation. We grade every driveway, patio and walkway to shed water away from the house, and we build the compacted base that keeps the surface level through York Region's freeze-thaw winters.</p>
+
+  <h2>Concrete work in Richmond Hill: what we do</h2>
+  <p>Most of our Richmond Hill calls fall into a few buckets:</p>
+  <ul>
+    <li><a href="/services/concrete-driveways/">Concrete driveways</a>, replacements and new pours on a proper base</li>
+    <li><a href="/services/concrete-patios/">Backyard patios</a>, including sloped-yard grading and steps</li>
+    <li><a href="/services/concrete-walkways/">Walkways</a> and <a href="/services/concrete-sidewalks/">sidewalk sections</a></li>
+    <li><a href="/services/concrete-porches/">Porches</a> and <a href="/services/concrete-steps/">front steps</a></li>
+    <li><a href="/services/concrete-slabs/">Slabs</a> for sheds and garages, plus <a href="/services/concrete-repair/">repair</a> and <a href="/services/parging/">parging</a></li>
+  </ul>
+
+  <h2>Matching what is already there</h2>
+  <p>A common Richmond Hill job is adding a walkway or patio beside concrete that is staying. We match finish and layout so the new work reads as part of the same property, and we are upfront about the cure: fresh concrete starts lighter and darkens as it weathers, blending further over the first few seasons.</p>
+
+  <h2>Why Richmond Hill homeowners choose us</h2>
+  <p>15 years of local experience and hundreds of concrete jobs across Toronto and the surrounding areas. Straight answers, a written quote with no pressure, and a crew that sticks to the schedule.</p>
+  <ul>
+    <li>2-year warranty on every job</li>
+    <li>Satisfaction guaranteed</li>
+    <li>Free, no-obligation quotes</li>
+  </ul>
+  <p>Getting started is simple. Send a few photos and a short description through the form, and we follow the same clear <a href="/#process">six-step process</a> on every job. We also work next door in <a href="/locations/markham/">Markham</a> and <a href="/locations/vaughan/">Vaughan</a>, so one call covers family or rental properties nearby.</p>
+</InnerPage>

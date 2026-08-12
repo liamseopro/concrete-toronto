@@ -1,0 +1,274 @@
+---
+import Base from '../layouts/Base.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import { SERVICES, LOCATIONS, faqSchema } from '../data/site.js';
+
+const faqs = [
+  {
+    q: 'Why choose concrete over other materials?',
+    a: 'Concrete is durable, low-maintenance and cost-effective compared to most other materials. A properly poured concrete driveway, patio or walkway stands up to decades of Toronto weather with very little upkeep, which is why it remains the standard choice for residential and commercial work.',
+  },
+  {
+    q: 'Are your concrete contractors familiar with local by-laws in Toronto?',
+    a: 'Yes. Our contractors know Toronto’s regulations and make sure your project complies with local requirements, from driveway widths and curb cuts to sidewalk standards. If a permit or inspection applies to your job, we tell you upfront.',
+  },
+  {
+    q: 'Do you handle commercial concrete jobs?',
+    a: 'Yes. We take on commercial projects including parking spaces, sidewalks, foundations and other concrete structures for businesses across Toronto and the GTA.',
+  },
+  {
+    q: 'Do you offer waterproofing services?',
+    a: 'Yes. We provide waterproofing services to protect concrete foundations from water damage and extend their lifespan. It pairs naturally with our foundation and parging work.',
+  },
+  {
+    q: 'How much does concrete work cost in Toronto?',
+    a: 'It depends on the size of the job, the condition of the site and how much prep is needed. Every quote from Concrete Toronto is free and without obligation, so you will know the exact price before any work starts.',
+  },
+  {
+    q: 'How do I get a quote?',
+    a: 'Fill out the free quote form on this page and we will get back to you with an estimate. Prefer to talk? Call us at (416) 489-4898.',
+  },
+];
+
+const install = SERVICES.slice(0, 8);
+const restore = SERVICES.slice(8);
+---
+
+<Base
+  title="Concrete Toronto | Toronto Concrete Contractor for Driveways, Patios & More"
+  description="Concrete Toronto is a concrete contractor serving Toronto and the GTA: driveways, patios, walkways, sidewalks, porches, steps, foundations, slabs and parging. 2-year warranty. Free quotes."
+  canonical="https://concrete-toronto.ca/"
+  ogDescription="Concrete driveways, patios, walkways, sidewalks, porches, steps, foundations, slabs and parging across Toronto and the GTA. 2-year warranty, satisfaction guaranteed."
+  geo
+  jsonld={[
+    {
+      '@type': 'WebSite',
+      '@id': 'https://concrete-toronto.ca/#website',
+      url: 'https://concrete-toronto.ca/',
+      name: 'Concrete Toronto',
+      publisher: { '@id': 'https://concrete-toronto.ca/#business' },
+    },
+    faqSchema(faqs),
+  ]}
+>
+
+<!-- ============== HERO ============== -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>Toronto concrete work,<br />poured to <span class="em">last.</span></h1>
+      <p class="hero-sub">Concrete Toronto is your local concrete contractor for driveways, patios, walkways, sidewalks, porches, steps, foundations and slabs, plus concrete repair, replacement and parging, across Toronto and the GTA.</p>
+
+      <div class="hero-cta">
+        <a href="#quote" class="btn btn-primary">Get My Free Quote <span class="arrow">→</span></a>
+        <a href="tel:+14164894898" class="btn btn-ghost">Call (416) 489-4898</a>
+      </div>
+
+      <div class="hero-badges">
+        <span class="hbadge"><span class="tick">✓</span> 2-Year Warranty</span>
+        <span class="hbadge"><span class="tick">✓</span> Satisfaction Guaranteed</span>
+        <span class="hbadge"><span class="tick">✓</span> On Schedule, Every Time</span>
+        <span class="hbadge"><span class="tick">✓</span> 15 Years of Local Experience</span>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <div class="ba" aria-label="Fresh concrete being poured on a Toronto job site">
+        <div class="ba-layer">
+          <img src="/assets/img/concrete-pouring-mixer-toronto.jpg" alt="Fresh concrete pouring from a mixer chute while a worker floats the surface at a Toronto job site" width="1600" height="1066" fetchpriority="high" decoding="async" />
+        </div>
+        <span class="ba-float">15 years in Toronto &amp; the GTA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== TRUST STRIP ============== -->
+<section class="trust">
+  <div class="wrap trust-row">
+    <div class="trust-item"><span class="num">15</span><span class="lbl"><strong>Years of experience</strong>Hundreds of concrete jobs across the GTA</span></div>
+    <div class="trust-item"><span class="num">2</span><span class="lbl"><strong>Year warranty</strong>We stand behind every job we pour</span></div>
+    <div class="trust-item"><span class="num">100%</span><span class="lbl"><strong>Satisfaction</strong>Guaranteed on every project</span></div>
+    <div class="trust-item"><span class="num">◷</span><span class="lbl"><strong>On schedule</strong>We stick to the timeline we agree on</span></div>
+  </div>
+</section>
+
+<!-- ============== SERVICES ============== -->
+<section class="section" id="solutions">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">What we do</p>
+      <h2>Concrete, from the ground up</h2>
+      <p>From a brand-new driveway to a repaired sidewalk or a freshly parged basement wall, we handle the concrete work that keeps your property solid and looking sharp.</p>
+    </div>
+
+    <div class="svc-groups">
+      <div class="svc-col reveal">
+        <h3>Concrete installation <span class="chip">New pours</span></h3>
+        <div class="svc-list">
+          {install.map((s, i) => (
+            <a class="svc-card" href={`/services/${s.slug}/`}><span class="mk">{String(i + 1).padStart(2, '0')}</span><span class="body"><strong>{s.name}</strong><span>{s.blurb}</span></span><span class="go">→</span></a>
+          ))}
+        </div>
+      </div>
+
+      <div class="svc-col reveal">
+        <h3>Repair &amp; restoration <span class="chip">Fix it right</span></h3>
+        <div class="svc-list">
+          {restore.map((s, i) => (
+            <a class="svc-card" href={`/services/${s.slug}/`}><span class="mk">{String(i + 9).padStart(2, '0')}</span><span class="body"><strong>{s.name}</strong><span>{s.blurb}</span></span><span class="go">→</span></a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== WORK GALLERY ============== -->
+<section class="section work" id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Our work</p>
+      <h2>Recent concrete jobs around the GTA</h2>
+      <p>A look at real driveways, walkways, sidewalks and slabs we have poured and finished across Toronto and the surrounding area.</p>
+    </div>
+
+    <div class="gallery">
+      <div class="gtile wide reveal"><img src="/assets/img/concrete-screeding-crew-toronto.jpg" alt="Crew screeding and troweling a freshly poured concrete slab in Toronto" width="1600" height="1066" loading="lazy" decoding="async" /></div>
+      <div class="gtile tall reveal"><img src="/assets/img/concrete-sidewalk-between-houses-toronto.jpg" alt="New concrete sidewalk between two houses in a Toronto neighbourhood" width="1200" height="1600" loading="lazy" decoding="async" /></div>
+      <div class="gtile reveal"><img src="/assets/img/concrete-broom-finish-toronto.jpg" alt="Worker applying a broom finish to a fresh concrete surface in Toronto" width="1600" height="1066" loading="lazy" decoding="async" /></div>
+      <div class="gtile tall reveal"><img src="/assets/img/new-concrete-front-walkway-toronto.jpg" alt="Freshly poured concrete front walkway beside porch steps at a Toronto home" width="1200" height="1600" loading="lazy" decoding="async" /></div>
+      <div class="gtile reveal"><img src="/assets/img/concrete-hand-trowel-finishing-toronto.jpg" alt="Hand trowel finishing on fresh concrete at a Toronto job site" width="1600" height="1066" loading="lazy" decoding="async" /></div>
+      <div class="gtile tall reveal"><img src="/assets/img/concrete-driveway-fresh-pour-toronto.jpg" alt="Freshly poured concrete driveway in front of a garage at a Toronto area home" width="1244" height="1600" loading="lazy" decoding="async" /></div>
+      <div class="gtile tall reveal"><img src="/assets/img/curved-concrete-walkway-entrance-toronto.jpg" alt="Curved broom-finish concrete walkway at the front entrance of a Toronto home" width="1280" height="1600" loading="lazy" decoding="async" /></div>
+      <div class="gtile wide reveal"><img src="/assets/img/concrete-sidewalk-side-yard-toronto.jpg" alt="Long broom-finish concrete sidewalk along the side of a Toronto house" width="1524" height="1600" loading="lazy" decoding="async" /></div>
+    </div>
+
+    <div class="cta-row reveal">
+      <a href="#quote" class="btn btn-primary">Get a Free Quote <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== WARRANTY BAND ============== -->
+<section class="section payband">
+  <div class="wrap reveal">
+    <p class="kicker">2-year warranty</p>
+    <h2>Every job we pour is backed, in writing, for two full years.</h2>
+    <p>We stand by our services and make sure our customers are protected. If something we built fails inside the warranty window, we come back and make it right. That is the deal, on every driveway, patio, walkway and foundation.</p>
+    <a href="#quote" class="btn btn-light">Get My Free Quote <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- ============== WHY CHOOSE ============== -->
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Why choose us</p>
+      <h2>Straight answers, solid concrete</h2>
+      <p>We have spent 15 years pouring concrete across Toronto and the surrounding area, and we run every job the same way: clear price, clean site, on schedule.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="ic">✓</div><h3>2-Year Warranty</h3><p>We stand by our services and make sure our customers are protected, on every project we carry out.</p></div>
+      <div class="why-card reveal"><div class="ic">♥</div><h3>Satisfaction Guaranteed</h3><p>We guarantee your satisfaction in every project. We are not done until you are happy with the result.</p></div>
+      <div class="why-card reveal"><div class="ic">◷</div><h3>Timely Services</h3><p>We understand how much the project duration matters, and we stick to the schedule every time.</p></div>
+      <div class="why-card reveal"><div class="ic">◆</div><h3>Local Experience</h3><p>15 years in the trade and hundreds of concrete jobs completed in Toronto and surrounding areas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ABOUT TEASER ============== -->
+<section class="section" id="about" style="padding-top:0;">
+  <div class="wrap">
+    <div class="areas-grid">
+      <div class="reveal">
+        <p class="kicker">About us</p>
+        <h2 class="section-head" style="font-size:clamp(34px,4.6vw,56px);text-transform:uppercase;margin-top:18px;">A local crew that grew out of landscaping &amp; construction</h2>
+        <p style="color:var(--muted);margin-top:16px;max-width:36em;">Concrete Toronto began with a passion for landscaping and construction. With 15 years of experience, our goal is to improve the look and durability of residential and commercial properties across the city, from concrete driveways, exterior steps and porches to backyard patios, commercial foundations and parking spaces.</p>
+        <div class="hero-cta">
+          <a href="/about/" class="btn btn-ghost">More about us <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="map-ph reveal"><img src="/assets/img/concrete-slab-front-entrance-toronto.jpg" alt="Fresh concrete slab and steps at the front entrance of a Toronto home" width="1198" height="1600" loading="lazy" decoding="async" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROCESS ============== -->
+<section class="section proc" id="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">How it works</p>
+      <h2>Our six-step installation process</h2>
+      <p>Every project follows the same clear path, so you always know what happens next.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step active-top reveal"><div class="n">STEP 01</div><h3>Initial Consultation</h3><p>We discuss your vision, needs and budget, then inspect the site and give you our recommendations.</p></div>
+      <div class="step reveal"><div class="n">STEP 02</div><h3>Design &amp; Planning</h3><p>We put together a detailed plan with measurements, layout and material selection.</p></div>
+      <div class="step reveal"><div class="n">STEP 03</div><h3>Site Preparation</h3><p>We clear the area, set the forms and build a stable base. Good prep is what makes concrete last.</p></div>
+      <div class="step reveal"><div class="n">STEP 04</div><h3>Mixing &amp; Pouring</h3><p>We mix to the right consistency and pour evenly into the forms for a strong, resilient surface.</p></div>
+      <div class="step reveal"><div class="n">STEP 05</div><h3>Finishing Touches</h3><p>We smooth the surface, add texture or pattern where wanted, and let the concrete cure properly.</p></div>
+      <div class="step reveal"><div class="n">STEP 06</div><h3>Inspection &amp; Clean-Up</h3><p>We walk the finished job with you, check every detail and leave the site clean.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SERVICE AREAS ============== -->
+<section class="section" id="areas">
+  <div class="wrap">
+    <div class="areas-grid">
+      <div class="reveal">
+        <p class="kicker">Where we work</p>
+        <h2 class="section-head" style="font-size:clamp(34px,4.6vw,56px);text-transform:uppercase;margin-top:18px;">Serving Toronto &amp; the entire GTA</h2>
+        <p style="color:var(--muted);margin-top:16px;max-width:36em;">From downtown Toronto out through Scarborough, North York, Vaughan, Markham and Richmond Hill, and east along the lake to Pickering, Ajax, Whitby and Oshawa. If you are in the GTA, we have you covered.</p>
+        <div class="chips">
+          {LOCATIONS.map((l) => (
+            <a class="chip-area" href={`/locations/${l.slug}/`}>{l.name}</a>
+          ))}
+          <a class="chip-area more" href="/locations/">All service areas →</a>
+        </div>
+      </div>
+      <div class="map-ph reveal"><img src="/assets/img/concrete-toronto-service-area-map-gta.jpg" alt="Map of the Greater Toronto Area service region covered by Concrete Toronto" width="1600" height="1095" loading="lazy" decoding="async" /></div>
+    </div>
+  </div>
+</section>
+
+<QuoteForm
+  intro="Tell us a little about your project and we'll get back to you with a free, no-obligation estimate. Prefer to talk it through first? Call us any time."
+  messagePlaceholder="e.g. Replace a cracked two-car driveway, broom finish, plus new front steps"
+/>
+
+<!-- ============== FAQ ============== -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <p class="kicker center">Good to know</p>
+      <h2>Concrete questions, answered</h2>
+    </div>
+
+    <div class="faq-list reveal">
+      {faqs.map((f) => (
+        <div class="faq-item">
+          <button class="faq-q">{f.q} <span class="pm">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">{f.a}</div></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ============== FINAL CTA ============== -->
+<section class="section final">
+  <div class="wrap">
+    <h2 class="reveal">Get your free quote today</h2>
+    <p class="reveal">Driveways, patios, walkways, foundations and more, poured on schedule and backed by a 2-year warranty. Tell us about your project and we will price it for you.</p>
+    <div class="btns reveal">
+      <a href="#quote" class="btn btn-light">Get My Free Quote</a>
+      <a href="tel:+14164894898" class="btn btn-outline-w">Call (416) 489-4898</a>
+    </div>
+  </div>
+</section>
+
+</Base>

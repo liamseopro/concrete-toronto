@@ -1,0 +1,39 @@
+---
+// The failure counterpart to /thank-you/. The JS submit path redirects here
+// when the webhook call fails or answers anything other than {ok:true}.
+//
+// Reached when the lead did NOT get through, so the phone number is the
+// primary action, not a footnote.
+//
+// noindex + absent from sitemap.xml and llms.txt.
+import Base from '../../layouts/Base.astro';
+---
+
+<Base
+  title="We Couldn't Send Your Request | Concrete Toronto"
+  description="Something went wrong sending your quote request. Call (416) 489-4898 and we'll take your details over the phone."
+  canonical="https://concrete-toronto.ca/quote-error/"
+  noindex={true}
+>
+
+<section class="section">
+  <div class="wrap">
+    <div class="form-card form-outcome centered">
+      <h1>We couldn't send that request</h1>
+      <p>
+        Sorry, your quote request didn't reach us. Nothing was saved, so please
+        don't wait on a reply to this one.
+      </p>
+      <p class="last">
+        The quickest fix is to call us and we'll take your project details over
+        the phone. Otherwise head back and send the form again.
+      </p>
+      <div class="btns">
+        <a class="btn btn-primary" href="tel:+14164894898">Call (416) 489-4898 <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-light" href="/#quote">Try the form again</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Base>

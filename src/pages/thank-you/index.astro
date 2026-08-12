@@ -1,0 +1,37 @@
+---
+// Where the quote form lands after a successful submit. With JS the visitor is
+// redirected here after the webhook answers {ok:true}; without JS the backend
+// meta-refreshes here after a plain form POST.
+//
+// noindex + absent from sitemap.xml and llms.txt: nothing here is worth
+// ranking, and it must never surface as an entry point.
+import Base from '../../layouts/Base.astro';
+---
+
+<Base
+  title="Request Received | Concrete Toronto"
+  description="Thanks, we've received your concrete quote request and we'll be in touch with your free estimate."
+  canonical="https://concrete-toronto.ca/thank-you/"
+  noindex={true}
+>
+
+<section class="section">
+  <div class="wrap">
+    <div class="form-card form-outcome">
+      <div class="form-success show">
+        <div class="big-tick" aria-hidden="true">✓</div>
+        <h1>Thanks, request received!</h1>
+        <p>
+          We've got your project details and we'll be in touch with your free
+          estimate. Need us sooner? Call
+          <a href="tel:+14164894898" class="accent-link">(416) 489-4898</a>.
+        </p>
+      </div>
+      <div class="btns">
+        <a class="btn btn-primary" href="/">Back to home <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Base>

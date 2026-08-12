@@ -1,0 +1,220 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  // Extra JSON-LD nodes for this page (Service, FAQPage, BreadcrumbList,
+  // WebSite...). The LocalBusiness/GeneralContractor node is added on every
+  // page automatically from src/data/site.js.
+  jsonld?: object[];
+  geo?: boolean;
+  geoPlacename?: string;
+  geoLat?: number;
+  geoLon?: number;
+  noindex?: boolean;
+}
+
+import '../styles/global.css';
+import { SITE, businessSchema } from '../data/site.js';
+
+const {
+  title,
+  description,
+  canonical,
+  ogTitle = title,
+  ogDescription = description,
+  twitterTitle = ogTitle,
+  twitterDescription = ogDescription,
+  jsonld = [],
+  geo = false,
+  // Location pages pass their own city so Oshawa/Whitby/etc. don't claim
+  // downtown Toronto's coordinates. Toronto pages fall through to the default.
+  geoPlacename = 'Toronto, Ontario',
+  geoLat = 43.6532,
+  geoLon = -79.3832,
+  // Form-outcome pages only: real pages for the no-JS post to land on, with
+  // nothing worth indexing.
+  noindex = false,
+} = Astro.props;
+
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [businessSchema, ...jsonld],
+};
+---
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Canonicalize extensionless /index URLs: GitHub Pages serves index.html at
+     /index with no redirect, duplicating every page. (/index.html, non-slash
+     and www variants are already 301'd by Pages.) -->
+<script is:inline>
+(function () {
+  var p = window.location.pathname;
+  if (p === "/index" || p.slice(-6) === "/index") {
+    window.location.replace((p === "/index" ? "/" : p.slice(0, -5)) + window.location.search + window.location.hash);
+  }
+})();
+</script>
+
+<!-- ============== PRIMARY SEO ============== -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+<meta name="theme-color" content="#1b1e23" />
+
+{geo && (
+  <>
+    <!-- geo / local -->
+    <meta name="geo.region" content="CA-ON" />
+    <meta name="geo.placename" content={geoPlacename} />
+    <meta name="geo.position" content={`${geoLat};${geoLon}`} />
+    <meta name="ICBM" content={`${geoLat}, ${geoLon}`} />
+  </>
+)}
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_CA" />
+<meta property="og:site_name" content="Concrete Toronto" />
+<meta property="og:title" content={ogTitle} />
+<meta property="og:description" content={ogDescription} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content="https://concrete-toronto.ca/assets/img/og-image.jpg" />
+<meta property="og:image:alt" content="Fresh concrete being poured and floated on a Toronto job site" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/jpeg" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={twitterTitle} />
+<meta name="twitter:description" content={twitterDescription} />
+<meta name="twitter:image" content="https://concrete-toronto.ca/assets/img/og-image.jpg" />
+<meta name="twitter:image:alt" content="Fresh concrete being poured and floated on a Toronto job site" />
+
+<link rel="icon" type="image/png" href="/assets/img/favicon.png" />
+<link rel="apple-touch-icon" href="/assets/img/favicon.png" />
+
+<!-- flags JS availability so .reveal animations only hide content when JS can show it again -->
+<script is:inline>document.documentElement.classList.add("js");</script>
+
+<!-- ============== FONTS ============== -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json" set:html={JSON.stringify(graph, null, 2)} />
+</head>
+<body>
+
+<!-- ============== HEADER ============== -->
+<header class="header">
+  <div class="wrap nav">
+    <a href="/" class="logo" aria-label="Concrete Toronto home">
+      <span class="bar"></span>
+      <span class="lock">
+        <span class="l1">Concrete Toronto</span>
+        <span class="l2">Toronto Concrete Contractor</span>
+      </span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="/services/">Services</a></li>
+      <li><a href="/#process">Process</a></li>
+      <li><a href="/locations/">Service Areas</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="#quote" class="btn btn-primary">Get a Free Quote</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="/services/">Services</a>
+  <a href="/#process">Process</a>
+  <a href="/locations/">Service Areas</a>
+  <a href="/about/">About</a>
+  <a href="#faq">FAQ</a>
+  <a href="#quote" class="btn btn-primary">Get a Free Quote</a>
+</nav>
+
+<slot />
+
+<!-- ============== FOOTER ============== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="/" class="logo" aria-label="Concrete Toronto">
+          <span class="bar"></span>
+          <span class="lock">
+            <span class="l1">Concrete Toronto</span>
+            <span class="l2">Toronto Concrete Contractor</span>
+          </span>
+        </a>
+        <p class="footer-blurb">A local Toronto concrete contractor for driveways, patios, walkways, sidewalks, porches, steps, foundations, slabs and parging across the Greater Toronto Area.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/concrete-driveways/">Concrete Driveways</a></li>
+          <li><a href="/services/concrete-patios/">Concrete Patios</a></li>
+          <li><a href="/services/concrete-walkways/">Concrete Walkways</a></li>
+          <li><a href="/services/concrete-steps/">Concrete Steps</a></li>
+          <li><a href="/services/parging/">Parging Services</a></li>
+          <li><a href="/services/">All services →</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="/locations/toronto/">Toronto</a></li>
+          <li><a href="/locations/north-york/">North York</a></li>
+          <li><a href="/locations/scarborough/">Scarborough</a></li>
+          <li><a href="/locations/markham/">Markham</a></li>
+          <li><a href="/locations/vaughan/">Vaughan</a></li>
+          <li><a href="/locations/">All service areas →</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href={SITE.phoneTel} class="footer-phone">{SITE.phoneDisplay}</a></li>
+          <li>Toronto, ON</li>
+          <li><a href="#quote">Get a Free Quote →</a></li>
+          <li><a href="/about/">About us</a></li>
+          <li><a href="/privacy-policy/">Privacy policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Concrete Toronto. All rights reserved.</span>
+      <span>Concrete · Parging · Serving Toronto &amp; the GTA</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <a href="#quote" class="btn btn-primary">Get a Free Quote</a>
+</div>
+
+<script>
+import '../scripts/main.js';
+</script>
+</body>
+</html>

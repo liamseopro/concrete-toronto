@@ -1,0 +1,98 @@
+---
+import InnerPage from '../../../components/InnerPage.astro';
+
+const faqs = [
+  {
+    q: 'How much does a concrete driveway cost in Toronto?',
+    a: 'It depends on the size of the drive, how much excavation the site needs and whether the old surface has to come out. Every quote from Concrete Toronto is free and in writing, so you will know the exact number before any work starts.',
+  },
+  {
+    q: 'How soon can I drive on a new concrete driveway?',
+    a: 'Keep vehicles off a fresh driveway for at least seven days. You can walk on it after 24 to 48 hours, and concrete reaches full strength in about a month.',
+  },
+  {
+    q: 'Do you remove my old driveway first?',
+    a: 'Yes. We break out and haul away the old concrete or asphalt, then excavate and regrade so the new base drains away from your home. Removal and disposal are included in the written quote.',
+  },
+  {
+    q: 'What finishes can I choose for a concrete driveway?',
+    a: 'A broom finish is the most popular because it gives grip in winter. We also offer smoother trowel finishes and simple border details. We will show you examples during the quote visit.',
+  },
+  {
+    q: 'What time of year is best to pour a driveway?',
+    a: 'Late spring through fall is ideal because concrete cures best in mild weather. We can pour in cooler conditions with the right precautions, but we will always tell you honestly if it is smarter to wait a few weeks.',
+  },
+];
+---
+
+<InnerPage
+  title="Concrete Driveways in Toronto & the GTA | Concrete Toronto"
+  description="Concrete driveway installation and replacement across Toronto and the GTA. Proper base prep, clean finishes and a 2-year warranty. Free quotes: (416) 489-4898."
+  canonical="https://concrete-toronto.ca/services/concrete-driveways/"
+  extraSchema={[{
+    '@type': 'Service',
+    '@id': 'https://concrete-toronto.ca/services/concrete-driveways/#service',
+    name: 'Concrete Driveways',
+    serviceType: 'Concrete driveway installation',
+    description: 'Concrete driveway removal, base preparation and installation across Toronto and the Greater Toronto Area, backed by a 2-year warranty.',
+    provider: { '@id': 'https://concrete-toronto.ca/#business' },
+    areaServed: 'Greater Toronto Area',
+    url: 'https://concrete-toronto.ca/services/concrete-driveways/',
+  }]}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: 'Concrete Driveways' }]}
+  kicker="Concrete driveways · Toronto & GTA"
+  h1="Concrete driveways built to"
+  h1Em="last"
+  sub="We pour concrete driveways across Toronto and the GTA with proper base prep, clean finishes and a 2-year warranty. Free quotes, no pressure."
+  sideIntro="Tell us about your driveway and we'll get you a clear, written quote."
+  galleryHeading="Recent concrete work"
+  gallery={[
+    { src: '/assets/img/concrete-driveway-fresh-pour-toronto.jpg', width: 1244, height: 1600, alt: 'Freshly poured concrete driveway in front of a garage at a Toronto area home' },
+    { src: '/assets/img/concrete-broom-finish-toronto.jpg', width: 1600, height: 1066, alt: 'Broom finish being applied to a fresh concrete driveway in Toronto', cls: 'wide' },
+    { src: '/assets/img/concrete-pouring-mixer-toronto.jpg', width: 1600, height: 1066, alt: 'Concrete pouring from a mixer chute at a Toronto driveway job' },
+  ]}
+  relatedKicker="Related services"
+  relatedHeading="More ways we can help"
+  related={[
+    { href: '/services/concrete-walkways/', title: 'Concrete Walkways', text: 'Front and side walkways that match the new drive' },
+    { href: '/services/concrete-steps/', title: 'Concrete Steps', text: 'Solid, even front entry steps' },
+    { href: '/services/concrete-replacement/', title: 'Concrete Replacement', text: 'Full removal and replacement of a failed driveway' },
+    { href: '/services/concrete-slabs/', title: 'Concrete Slabs', text: 'Garage and parking pads, level and square' },
+  ]}
+  quoteIntro="Send a few details about your driveway through the form and we'll come back with a clear, written estimate."
+  messagePlaceholder="e.g. Replace a cracked two-car driveway, broom finish"
+  faqHeading="Concrete driveway questions, answered"
+  faqs={faqs}
+  finalCtaText="Fill out the quick form and we'll price your new concrete driveway. No pressure, no surprises."
+>
+  <p>A concrete driveway works harder than almost any other surface on your property. It carries your vehicles every single day, takes shovels and road salt all winter, and it is the first thing people see when they pull up to your home. <a href="/">Concrete Toronto</a> pours driveways across Toronto and the GTA, from single-car pads to wide double drives, and we build every one of them to stand up to Ontario weather.</p>
+
+  <p>Most driveways that fail early do not fail because of the concrete. They fail because of what is underneath. A slab poured over loose or poorly drained fill will crack, heave and settle within a few winters. That is why we put as much work into excavation and base compaction as we put into the pour itself. Get the ground right and the surface above it stays flat and solid for decades.</p>
+
+  <h2>What's included in our concrete driveway service</h2>
+  <p>Every driveway job is priced as a complete package in a written quote, so nothing changes partway through. Here is what we take care of:</p>
+  <ul>
+    <li><strong>Removal and disposal</strong> of your old concrete or asphalt driveway</li>
+    <li><strong>Excavation and grading</strong> so water drains away from the house, not toward it</li>
+    <li><strong>A compacted granular base</strong>, the single biggest factor in how long your driveway lasts</li>
+    <li><strong>Concrete mixed and poured</strong> for Ontario freeze-thaw conditions</li>
+    <li><strong>Your choice of finish</strong>, with broom texture recommended for winter grip</li>
+    <li><strong>Control joints</strong> cut or tooled in the right places to manage natural shrinkage</li>
+    <li><strong>Full cleanup</strong> plus clear guidance on curing and sealing</li>
+  </ul>
+
+  <h2>Signs your driveway is due for replacement</h2>
+  <p>Hairline surface cracks are normal on older concrete and usually nothing to worry about. The warning signs we look for are wider cracks that run the full width of a slab, sections that have sunk or heaved out of line, crumbling across the surface, and pitting from years of road salt. If the damage is limited to one corner, a <a href="/services/concrete-repair/">repair</a> can make sense. When it shows up everywhere you look, <a href="/services/concrete-replacement/">replacement</a> is usually the smarter spend.</p>
+
+  <p>Drainage is the other thing worth checking. A driveway that has settled toward the house sends meltwater straight at your foundation walls, and that often shows up later as damp basement corners. If we spot that pattern during your quote visit, we will say so, since a properly graded new driveway and <a href="/services/parging/">parging</a> often go hand in hand.</p>
+
+  <h2>Why homeowners choose us</h2>
+  <p>We are a local crew with 15 years of concrete work across Toronto and hundreds of jobs behind us. That means honest advice about repair versus replacement, a clear written quote, and a team that shows up when we say we will. Every job carries a 2-year warranty and our satisfaction guarantee.</p>
+  <ul>
+    <li>2-year warranty on every pour</li>
+    <li>Free, no-pressure quotes</li>
+    <li>Tidy sites and full cleanup when we are done</li>
+  </ul>
+
+  <p>Getting started is simple: reach out, we visit and measure, you get a written quote, and we book the work. Doing more than a driveway? We also pour <a href="/services/concrete-patios/">concrete patios</a> and <a href="/services/concrete-steps/">concrete steps</a>, and bundling them into one visit usually saves you time and hassle. Find your community on our <a href="/locations/">service areas</a> page.</p>
+</InnerPage>

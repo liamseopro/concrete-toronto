@@ -1,0 +1,95 @@
+---
+import InnerPage from '../../../components/InnerPage.astro';
+
+const faqs = [
+  {
+    q: 'What concrete problems can you repair?',
+    a: 'Cracks, surface scaling and spalling, chipped edges and nosings, and uneven sections. We repair and resurface concrete cracks and uneven surfaces to restore the space.',
+  },
+  {
+    q: 'How do I know if my concrete needs repair or replacement?',
+    a: 'Isolated cracks and surface wear on otherwise sound concrete are repair jobs. Cracks running the full width of a slab, sections that have heaved or sunk, or surface failure across most of the area point to replacement. We will tell you honestly which one you have.',
+  },
+  {
+    q: 'Will the repair match my existing concrete?',
+    a: 'New repair material cures lighter and darkens as it weathers, so a fresh repair stands out at first and blends over a few seasons. Where the contrast would bother you, resurfacing a larger area gives a uniform look from day one.',
+  },
+  {
+    q: 'How long does a concrete repair last?',
+    a: 'Done on sound concrete with proper prep, a repair lasts for years, and our work carries the same 2-year warranty as our new pours. Prep is where cheap repairs fail, and it is where we spend the time.',
+  },
+  {
+    q: 'Do you repair commercial concrete?',
+    a: 'Yes. We handle commercial repair work including sidewalks, parking spaces and other structures for businesses across Toronto and the GTA.',
+  },
+];
+---
+
+<InnerPage
+  title="Concrete Repair in Toronto & the GTA | Concrete Toronto"
+  description="Concrete repair across Toronto and the GTA: cracks, scaling, spalling and uneven surfaces repaired and resurfaced. 2-year warranty. Free quotes."
+  canonical="https://concrete-toronto.ca/services/concrete-repair/"
+  extraSchema={[{
+    '@type': 'Service',
+    '@id': 'https://concrete-toronto.ca/services/concrete-repair/#service',
+    name: 'Concrete Repair',
+    serviceType: 'Concrete repair and resurfacing',
+    description: 'Repair and resurfacing of cracked and uneven concrete surfaces across Toronto and the Greater Toronto Area, backed by a 2-year warranty.',
+    provider: { '@id': 'https://concrete-toronto.ca/#business' },
+    areaServed: 'Greater Toronto Area',
+    url: 'https://concrete-toronto.ca/services/concrete-repair/',
+  }]}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: 'Concrete Repair' }]}
+  kicker="Concrete repair · Toronto & GTA"
+  h1="Repairs that"
+  h1Em="restore"
+  sub="We repair and resurface concrete cracks and uneven surfaces across Toronto and the GTA, restoring your space with a 2-year warranty. Free quotes."
+  sideIntro="Tell us what is damaged and we'll send a clear, written quote."
+  galleryHeading="Recent concrete work"
+  gallery={[
+    { src: '/assets/img/concrete-hand-trowel-finishing-toronto.jpg', width: 1600, height: 1066, alt: 'Hand trowel finishing a concrete surface repair in Toronto' },
+    { src: '/assets/img/concrete-broom-finish-toronto.jpg', width: 1600, height: 1066, alt: 'Broom finish being applied to fresh concrete in Toronto', cls: 'wide' },
+    { src: '/assets/img/concrete-sidewalk-side-yard-toronto.jpg', width: 1524, height: 1600, alt: 'Broom-finish concrete sidewalk along a Toronto house' },
+  ]}
+  relatedKicker="Related services"
+  relatedHeading="More ways we can help"
+  related={[
+    { href: '/services/concrete-replacement/', title: 'Concrete Replacement', text: 'When repair is not the right call' },
+    { href: '/services/parging/', title: 'Parging Services', text: 'Repair cracked foundation coatings' },
+    { href: '/services/concrete-steps/', title: 'Concrete Steps', text: 'Fix chipped and crumbling steps' },
+    { href: '/services/concrete-driveways/', title: 'Concrete Driveways', text: 'New pours when it is time' },
+  ]}
+  quoteIntro="Send a photo or two with the form and we'll come back with a clear, written estimate."
+  messagePlaceholder="e.g. Cracks and flaking on the garage floor edge and two walkway flags"
+  faqHeading="Concrete repair questions, answered"
+  faqs={faqs}
+  finalCtaText="Tell us what is damaged and we'll send a free written quote. No pressure, no surprises."
+>
+  <p>Not every tired surface needs to come out. When the concrete underneath is sound, a proper repair restores the space for a fraction of the cost of a new pour. <a href="/">Concrete Toronto</a> repairs and resurfaces concrete cracks and uneven surfaces across Toronto and the GTA.</p>
+
+  <p>The key word is proper. A patch slapped over a dirty, loose surface fails within a season. We cut out the failed material, clean the substrate, and bond the repair so it becomes part of the slab instead of sitting on top of it.</p>
+
+  <h2>What's included in our concrete repair service</h2>
+  <p>Every repair is quoted in writing after we see the damage:</p>
+  <ul>
+    <li><strong>An honest assessment</strong> of repair versus replacement</li>
+    <li><strong>Crack repair</strong> for driveways, walkways, sidewalks and slabs</li>
+    <li><strong>Resurfacing</strong> for scaled, spalled or pitted areas</li>
+    <li><strong>Edge and nosing rebuilds</strong> on steps and curbs</li>
+    <li><strong>Levelling of uneven sections</strong> where the base allows it</li>
+    <li><strong>Full cleanup</strong> when the work is done</li>
+  </ul>
+
+  <h2>When repair is the wrong answer</h2>
+  <p>We will not sell you a repair that cannot last. If the base has failed, if cracking runs through the slab, or if the surface is gone across most of the area, <a href="/services/concrete-replacement/">replacement</a> is the honest recommendation and we will show you why. A repair on concrete that needs replacing just postpones the inevitable and costs you twice.</p>
+
+  <h2>Why homeowners choose us</h2>
+  <p>15 years of concrete work across Toronto means we have diagnosed every failure pattern this climate produces. You get a straight answer, a written price, and a 2-year warranty on the repair.</p>
+  <ul>
+    <li>2-year warranty on our work</li>
+    <li>Satisfaction guaranteed</li>
+    <li>Free, no-obligation quotes</li>
+  </ul>
+
+  <p>Send a photo or two with the form and we can often tell you right away whether repair or replacement makes sense. We work across the GTA, see our <a href="/locations/">service areas</a>.</p>
+</InnerPage>

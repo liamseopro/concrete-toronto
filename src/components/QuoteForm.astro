@@ -1,0 +1,92 @@
+---
+// The one and only quote form on the site. Included on every page; the aside
+// copy and message placeholder are props so each page can speak to its own
+// service or city without duplicating the markup.
+//
+// Behaviour contract (see src/scripts/main.js):
+// - JS path: fetch POST to the n8n webhook, then redirect to /thank-you/ on
+//   {ok:true} or /quote-error/ on any failure.
+// - No-JS path: plain POST navigation; the backend answers with an HTML
+//   meta-refresh to /thank-you/. Keep action/method/field names untouched.
+// - The markup ships WITHOUT novalidate so no-JS visitors keep native browser
+//   validation; main.js adds novalidate only after its own handler attaches.
+
+import SourceUrlField from './SourceUrlField.astro';
+import { SITE } from '../data/site.js';
+
+interface Props {
+  intro?: string;
+  messagePlaceholder?: string;
+  cityPlaceholder?: string;
+}
+
+const {
+  intro = "Tell us a little about your project and we'll get back to you with a free, no-obligation estimate.",
+  messagePlaceholder = 'e.g. Replace a cracked two-car driveway, broom finish',
+  cityPlaceholder = 'e.g. Toronto',
+} = Astro.props;
+---
+
+<section class="section quote" id="quote">
+  <div class="wrap quote-grid">
+    <div class="quote-aside reveal">
+      <p class="kicker">Free estimate</p>
+      <h2>Get your free quote today</h2>
+      <p>{intro}</p>
+      <ul class="quote-points">
+        <li><span class="tick">✓</span> Free, no-obligation estimate</li>
+        <li><span class="tick">✓</span> Backed by our 2-year warranty</li>
+        <li><span class="tick">✓</span> On schedule, every time</li>
+        <li><span class="tick">✓</span> Satisfaction guaranteed</li>
+      </ul>
+      <p class="quote-talk">Prefer to talk? <a href={SITE.phoneTel}>{SITE.phoneDisplay}</a></p>
+    </div>
+
+    <div>
+      <form class="form-card" id="quoteForm" action="https://n8n.londonseopro.ca/webhook/concrete-toronto-lead" method="POST">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <SourceUrlField />
+        <div class="field">
+          <label for="f-name">Name <span class="req">*</span></label>
+          <input id="f-name" type="text" name="name" placeholder="First and last name" autocomplete="name" required />
+          <span class="err">Please enter your name.</span>
+        </div>
+        <div class="field row2">
+          <div class="field" style="margin:0;">
+            <label for="f-phone">Phone <span class="req">*</span></label>
+            <input id="f-phone" type="tel" name="phone" data-tel placeholder="(416) 000-0000" autocomplete="tel" required />
+            <span class="err">Enter a valid phone number.</span>
+          </div>
+          <div class="field" style="margin:0;">
+            <label for="f-email">Email</label>
+            <input id="f-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" />
+            <span class="err">Enter a valid email address.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-address">Project address</label>
+          <input id="f-address" type="text" name="address" placeholder="Street address" autocomplete="street-address" />
+          <span class="err">Please enter your address.</span>
+        </div>
+        <div class="field row2">
+          <div class="field" style="margin:0;">
+            <label for="f-city">City</label>
+            <input id="f-city" type="text" name="city" placeholder={cityPlaceholder} autocomplete="address-level2" />
+            <span class="err"></span>
+          </div>
+          <div class="field" style="margin:0;">
+            <label for="f-postal">Postal code</label>
+            <input id="f-postal" type="text" name="postal" placeholder="M5V 0A1" autocomplete="postal-code" />
+            <span class="err"></span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-message">Tell us about your project</label>
+          <textarea id="f-message" name="message" placeholder={messagePlaceholder}></textarea>
+          <span class="err">A few details help us quote accurately.</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Get My Free Quote</button>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,98 @@
+---
+import InnerPage from '../../../components/InnerPage.astro';
+
+const faqs = [
+  {
+    q: 'How much does concrete work cost in Pickering?',
+    a: 'It depends on the size of the job and how much prep the site needs. Every quote from Concrete Toronto is free and in writing, so you know the exact price before any work starts.',
+  },
+  {
+    q: 'Do you serve all of Pickering, including the north end?',
+    a: 'Yes. We work across Pickering, from the waterfront neighbourhoods up through Liverpool, Brock Ridge and the north end toward Claremont.',
+  },
+  {
+    q: 'Can you pour a patio on a new-build lot?',
+    a: 'Yes. New-build lots need the ground to settle before flatwork goes in, and we will tell you honestly if your yard should wait a season. When it is ready, we build a compacted base and pour.',
+  },
+  {
+    q: 'Do you charge more to come out to Pickering?',
+    a: 'No. Quotes are based on the work itself, not the distance. A house in Pickering is quoted the same way as a house in Toronto.',
+  },
+  {
+    q: 'How do I get a quote?',
+    a: 'Fill out the free quote form and we will get back to you with an estimate. Prefer to talk? Call us at (416) 489-4898.',
+  },
+];
+---
+
+<InnerPage
+  title="Concrete Contractor in Pickering | Concrete Toronto"
+  description="Concrete driveways, patios, walkways, porches, steps and slabs in Pickering, from the waterfront to the north end. 2-year warranty, free quotes."
+  canonical="https://concrete-toronto.ca/locations/pickering/"
+  geo
+  geoPlacename="Pickering, Ontario"
+  geoLat={43.8384}
+  geoLon={-79.0868}
+  extraSchema={[{
+    '@type': 'Service',
+    name: 'Concrete Contractor in Pickering',
+    serviceType: 'Concrete installation, repair and parging',
+    description: 'Concrete driveways, patios, walkways, sidewalks, porches, steps, foundations, slabs, repair, replacement and parging for homes and businesses across Pickering, Ontario. 2-year warranty and free quotes.',
+    provider: { '@id': 'https://concrete-toronto.ca/#business' },
+    areaServed: { '@type': 'City', name: 'Pickering, Ontario' },
+    url: 'https://concrete-toronto.ca/locations/pickering/',
+  }]}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Service Areas', href: '/locations/' }, { label: 'Pickering' }]}
+  kicker="Serving Pickering"
+  h1="Concrete work in"
+  h1Em="Pickering"
+  sub="Concrete driveways, patios, walkways, porches and steps across Pickering, from the waterfront to the north end, backed by a 2-year warranty."
+  sideIntro="Tell us about your Pickering project and we'll send a clear, written quote."
+  cityPlaceholder="e.g. Pickering"
+  galleryHeading="Recent concrete work"
+  gallery={[
+    { src: '/assets/img/concrete-driveway-fresh-pour-toronto.jpg', width: 1244, height: 1600, alt: 'Freshly poured concrete driveway at a Pickering area home' },
+    { src: '/assets/img/concrete-hand-trowel-finishing-toronto.jpg', width: 1600, height: 1066, alt: 'Hand trowel finishing fresh concrete in Pickering', cls: 'wide' },
+    { src: '/assets/img/curved-concrete-walkway-entrance-toronto.jpg', width: 1280, height: 1600, alt: 'Curved concrete walkway at a Pickering front entrance' },
+  ]}
+  relatedKicker="Nearby & related"
+  relatedHeading="More ways we can help"
+  related={[
+    { href: '/services/concrete-driveways/', title: 'Concrete Driveways', text: 'New pours and replacements' },
+    { href: '/services/concrete-patios/', title: 'Concrete Patios', text: 'Backyard patios for new and mature lots' },
+    { href: '/services/concrete-slabs/', title: 'Concrete Slabs', text: 'Shed, garage and addition slabs' },
+    { href: '/locations/ajax/', title: 'Ajax', text: 'Concrete work next door in Ajax' },
+    { href: '/locations/scarborough/', title: 'Scarborough', text: 'Concrete work in Scarborough' },
+  ]}
+  quoteIntro="Send us a few details about your Pickering home and we'll reply with a straightforward written quote."
+  messagePlaceholder="e.g. New patio and shed slab for a new-build lot in north Pickering"
+  faqHeading="Concrete work in Pickering, answered"
+  faqs={faqs}
+  finalCtaText="Tell us about your Pickering project through the form and we'll send a free written quote. No pressure, no surprises."
+>
+  <p>Pickering straddles two eras of housing. The mature neighbourhoods near the waterfront and along Kingston Road have driveways and walkways with real age on them, while the newer communities up through Brock Ridge and toward Claremont are filling in yards that need patios, walkways and shed slabs for the first time. <a href="/">Concrete Toronto</a> works across all of it, and we back each job with a 2-year warranty.</p>
+
+  <p>One honest note for new-build owners: fresh fill settles. If your yard was graded in the last year or two, we may tell you to let it sit a season before we pour. It is not the answer anyone wants, but it is the one that keeps your new patio level five years from now.</p>
+
+  <h2>Concrete work in Pickering: what we do</h2>
+  <p>Most of our Pickering calls fall into a few buckets:</p>
+  <ul>
+    <li><a href="/services/concrete-driveways/">Concrete driveways</a>, replacements and new pours</li>
+    <li><a href="/services/concrete-patios/">Backyard patios</a> for new and mature lots</li>
+    <li><a href="/services/concrete-walkways/">Walkways</a> and <a href="/services/concrete-sidewalks/">sidewalk sections</a></li>
+    <li><a href="/services/concrete-porches/">Porches</a> and <a href="/services/concrete-steps/">steps</a></li>
+    <li><a href="/services/concrete-slabs/">Slabs</a> for sheds and garages, plus <a href="/services/concrete-repair/">repair</a> and <a href="/services/parging/">parging</a></li>
+  </ul>
+
+  <h2>Same quote, same warranty as Toronto</h2>
+  <p>We do not price by distance. A Pickering job gets the same free written quote, the same materials, the same 2-year warranty and the same satisfaction guarantee as a job down the street from us. We are in Durham regularly, so scheduling is straightforward.</p>
+
+  <h2>Why Pickering homeowners choose us</h2>
+  <p>15 years of local experience and hundreds of concrete jobs across Toronto and the surrounding areas. Straight answers, a written quote with no pressure, and a crew that sticks to the schedule.</p>
+  <ul>
+    <li>2-year warranty on every job</li>
+    <li>Satisfaction guaranteed</li>
+    <li>Free, no-obligation quotes</li>
+  </ul>
+  <p>Getting started is simple. Send a few photos and a short description through the form, and we follow the same clear <a href="/#process">six-step process</a> on every job. We also work next door in <a href="/locations/ajax/">Ajax</a> and west into <a href="/locations/scarborough/">Scarborough</a>, so one call covers family or rental properties nearby.</p>
+</InnerPage>

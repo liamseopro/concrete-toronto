@@ -1,0 +1,95 @@
+---
+import InnerPage from '../../../components/InnerPage.astro';
+
+const faqs = [
+  {
+    q: 'How wide should a front walkway be?',
+    a: 'Three feet is the practical minimum for one person, and four feet lets two people walk side by side. We measure your lot and recommend a width that fits the entrance and the frontage.',
+  },
+  {
+    q: 'Can you curve a concrete walkway?',
+    a: 'Yes. Concrete forms can be set to gentle curves, which often suits front yards better than a straight run. We lay out the line with you on site before any forms go in.',
+  },
+  {
+    q: 'What finish is safest in winter?',
+    a: 'A broom finish. The fine texture gives grip under snow and ice, which is why we recommend it for walkways. Smooth trowel finishes look sleek but get slippery when wet.',
+  },
+  {
+    q: 'My walkway has heaved. Repair or replace?',
+    a: 'If one section has lifted at a joint, a targeted repair can work. If several sections are out of level or the surface is crumbling along its length, replacement gives you a walkway that stays even. We will tell you honestly which one yours needs.',
+  },
+  {
+    q: 'How long does a walkway job take?',
+    a: 'A typical front walkway is a one to two day job once we start: excavation and base on day one, pour and finish shortly after. We confirm the schedule in writing before work begins, and we stick to it.',
+  },
+];
+---
+
+<InnerPage
+  title="Concrete Walkways in Toronto & the GTA | Concrete Toronto"
+  description="Concrete walkway installation across Toronto and the GTA. Front and side walkways with a slip-resistant broom finish and a 2-year warranty. Free quotes."
+  canonical="https://concrete-toronto.ca/services/concrete-walkways/"
+  extraSchema={[{
+    '@type': 'Service',
+    '@id': 'https://concrete-toronto.ca/services/concrete-walkways/#service',
+    name: 'Concrete Walkways',
+    serviceType: 'Concrete walkway installation',
+    description: 'Concrete walkway installation for front entrances, side yards and backyards across Toronto and the Greater Toronto Area, backed by a 2-year warranty.',
+    provider: { '@id': 'https://concrete-toronto.ca/#business' },
+    areaServed: 'Greater Toronto Area',
+    url: 'https://concrete-toronto.ca/services/concrete-walkways/',
+  }]}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: 'Concrete Walkways' }]}
+  kicker="Concrete walkways · Toronto & GTA"
+  h1="Walkways that stay"
+  h1Em="level & safe"
+  sub="Front, side and backyard concrete walkways across Toronto and the GTA, with a slip-resistant finish and a 2-year warranty. Free quotes, no pressure."
+  sideIntro="Tell us where the walkway goes and we'll send a clear, written quote."
+  galleryHeading="Recent walkway work"
+  gallery={[
+    { src: '/assets/img/curved-concrete-walkway-entrance-toronto.jpg', width: 1280, height: 1600, alt: 'Curved broom-finish concrete walkway at a Toronto front entrance' },
+    { src: '/assets/img/new-concrete-front-walkway-toronto.jpg', width: 1200, height: 1600, alt: 'Freshly poured concrete front walkway beside porch steps at a Toronto home', cls: 'wide' },
+    { src: '/assets/img/concrete-walkway-broom-finish-toronto.jpg', width: 1319, height: 1600, alt: 'Broom-finish concrete walkway along the side of a Toronto house' },
+  ]}
+  relatedKicker="Related services"
+  relatedHeading="More ways we can help"
+  related={[
+    { href: '/services/concrete-sidewalks/', title: 'Concrete Sidewalks', text: 'Even, safe sidewalks for homes and businesses' },
+    { href: '/services/concrete-steps/', title: 'Concrete Steps', text: 'Steps that meet the walkway right' },
+    { href: '/services/concrete-patios/', title: 'Concrete Patios', text: 'A backyard patio off the same pour' },
+    { href: '/services/concrete-repair/', title: 'Concrete Repair', text: 'Fix a heaved or cracked walkway section' },
+  ]}
+  quoteIntro="Send a few details about your walkway and we'll come back with a clear, written estimate."
+  messagePlaceholder="e.g. New curved front walkway, about 25 feet long"
+  faqHeading="Concrete walkway questions, answered"
+  faqs={faqs}
+  finalCtaText="Tell us about your walkway and we'll send a free written quote. No pressure, no surprises."
+>
+  <p>A walkway is a small surface with a big job: it guides every visitor to your door and it has to stay even and safe through decades of freeze-thaw. <a href="/">Concrete Toronto</a> pours front, side and backyard walkways across Toronto and the GTA, straight runs and gentle curves alike.</p>
+
+  <p>Walkways fail when water gets under them. We excavate to a proper depth, compact a granular base, and grade the surface so water sheds to the side instead of pooling or running at your foundation. That prep is what keeps the joints from heaving when the frost comes.</p>
+
+  <h2>What's included in our concrete walkway service</h2>
+  <p>Every walkway job is priced as a complete package in a written quote:</p>
+  <ul>
+    <li><strong>Layout and design</strong>, straight or curved to suit the yard</li>
+    <li><strong>Removal of the old walkway</strong> where there is one, with disposal included</li>
+    <li><strong>Excavation and a compacted granular base</strong></li>
+    <li><strong>A broom finish</strong> for grip in wet and icy weather</li>
+    <li><strong>Control joints</strong> placed to keep any shrinkage cracking where we planned it</li>
+    <li><strong>Full cleanup</strong> when the job is done</li>
+  </ul>
+
+  <h2>Walkways, sidewalks, steps, done together</h2>
+  <p>Front walkways usually meet a <a href="/services/concrete-sidewalks/">sidewalk</a> at one end and <a href="/services/concrete-steps/">steps</a> at the other. If any of those need work, bundling them into one visit means one quote and one schedule, and the finishes match. We will price the bundle honestly: if a section only needs a <a href="/services/concrete-repair/">repair</a>, we say so.</p>
+
+  <h2>Why homeowners choose us</h2>
+  <p>We have poured concrete across Toronto for 15 years, hundreds of jobs from single walkways to full frontages. You get a written price, a schedule we stick to, and a 2-year warranty on the finished work.</p>
+  <ul>
+    <li>2-year warranty on every pour</li>
+    <li>Satisfaction guaranteed</li>
+    <li>Free, no-obligation quotes</li>
+  </ul>
+
+  <p>We pour walkways across the whole GTA, from downtown Toronto to <a href="/locations/oshawa/">Oshawa</a> and <a href="/locations/richmond-hill/">Richmond Hill</a>. See every area on our <a href="/locations/">service areas</a> page.</p>
+</InnerPage>

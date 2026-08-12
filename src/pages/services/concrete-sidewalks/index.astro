@@ -1,0 +1,98 @@
+---
+import InnerPage from '../../../components/InnerPage.astro';
+
+const faqs = [
+  {
+    q: 'Do you handle sidewalk by-law compliance in Toronto?',
+    a: 'Yes. Our contractors know Toronto’s regulations and make sure your project complies with local requirements, including sidewalk widths and grades. If the city needs a permit or inspection for your job, we flag it upfront.',
+  },
+  {
+    q: 'Can you replace just the damaged sidewalk flags?',
+    a: 'Often, yes. If the damage is limited to a few sections, we can remove and repour just those flags and blend the joints. If heaving runs the length of the walk, a full replacement is the better value. We tell you straight which one fits.',
+  },
+  {
+    q: 'What finish do you use on sidewalks?',
+    a: 'A broom finish, because it gives reliable grip in wet and icy weather. It is the standard for public-facing concrete and the safest choice for a sidewalk.',
+  },
+  {
+    q: 'Do you do sidewalks for businesses?',
+    a: 'Yes. We handle commercial concrete jobs including sidewalks, parking spaces and other structures for businesses across Toronto and the GTA.',
+  },
+  {
+    q: 'How long until a new sidewalk can be walked on?',
+    a: 'Foot traffic is fine after 24 to 48 hours. We barricade the fresh pour and leave clear guidance on curing before we go.',
+  },
+];
+---
+
+<InnerPage
+  title="Concrete Sidewalks in Toronto & the GTA | Concrete Toronto"
+  description="Concrete sidewalk installation and replacement across Toronto and the GTA. Even, safe, by-law compliant sidewalks with a 2-year warranty. Free quotes."
+  canonical="https://concrete-toronto.ca/services/concrete-sidewalks/"
+  extraSchema={[{
+    '@type': 'Service',
+    '@id': 'https://concrete-toronto.ca/services/concrete-sidewalks/#service',
+    name: 'Concrete Sidewalks',
+    serviceType: 'Concrete sidewalk installation',
+    description: 'Concrete sidewalk installation, section replacement and trip-hazard removal for homes and businesses across Toronto and the Greater Toronto Area, backed by a 2-year warranty.',
+    provider: { '@id': 'https://concrete-toronto.ca/#business' },
+    areaServed: 'Greater Toronto Area',
+    url: 'https://concrete-toronto.ca/services/concrete-sidewalks/',
+  }]}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: 'Concrete Sidewalks' }]}
+  kicker="Concrete sidewalks · Toronto & GTA"
+  h1="Sidewalks, even"
+  h1Em="& by the book"
+  sub="We pour and replace concrete sidewalks for homes and businesses across Toronto and the GTA, compliant with local by-laws and backed by a 2-year warranty."
+  sideIntro="Tell us about your sidewalk and we'll send a clear, written quote."
+  galleryHeading="Recent sidewalk work"
+  gallery={[
+    { src: '/assets/img/concrete-sidewalk-between-houses-toronto.jpg', width: 1200, height: 1600, alt: 'New concrete sidewalk between two houses in a Toronto neighbourhood' },
+    { src: '/assets/img/concrete-sidewalk-side-yard-toronto.jpg', width: 1524, height: 1600, alt: 'Long broom-finish concrete sidewalk along the side of a Toronto house', cls: 'wide' },
+    { src: '/assets/img/concrete-walkway-broom-finish-toronto.jpg', width: 1319, height: 1600, alt: 'Fresh broom-finish concrete sidewalk beside a Toronto home' },
+  ]}
+  relatedKicker="Related services"
+  relatedHeading="More ways we can help"
+  related={[
+    { href: '/services/concrete-walkways/', title: 'Concrete Walkways', text: 'Front and side walkways to match' },
+    { href: '/services/concrete-repair/', title: 'Concrete Repair', text: 'Targeted fixes for cracked sections' },
+    { href: '/services/concrete-replacement/', title: 'Concrete Replacement', text: 'Full replacement of a failed walk' },
+    { href: '/services/concrete-driveways/', title: 'Concrete Driveways', text: 'Driveway aprons and new pours' },
+  ]}
+  quoteIntro="Send a few details about your sidewalk and we'll come back with a clear, written estimate."
+  messagePlaceholder="e.g. Replace three heaved sidewalk flags in front of the house"
+  faqHeading="Concrete sidewalk questions, answered"
+  faqs={faqs}
+  finalCtaText="Tell us about your sidewalk and we'll send a free written quote. No pressure, no surprises."
+>
+  <p>A sidewalk has one job: give people a safe, even path, in January ice and July heat alike. <a href="/">Concrete Toronto</a> pours and replaces concrete sidewalks for homes and businesses across Toronto and the GTA, and we build them to stay level through the freeze-thaw cycle.</p>
+
+  <p>Sidewalk work in Toronto comes with rules. Widths, grades and curb details are covered by local by-laws, and our contractors know them. We make sure your project complies with local regulations, and if a permit or inspection applies, we tell you before work starts, not after.</p>
+
+  <h2>What's included in our concrete sidewalk service</h2>
+  <p>Every sidewalk job is priced as a complete package in a written quote:</p>
+  <ul>
+    <li><strong>Removal and disposal</strong> of broken or heaved sections</li>
+    <li><strong>Excavation and a compacted granular base</strong> to resist frost movement</li>
+    <li><strong>By-law compliant widths and grades</strong> for Toronto sidewalks</li>
+    <li><strong>A broom finish</strong> for grip in wet and icy weather</li>
+    <li><strong>Control joints</strong> tooled to keep sections even</li>
+    <li><strong>Barricading and cleanup</strong> so the path stays safe while it cures</li>
+  </ul>
+
+  <h2>Section replacement or the whole run?</h2>
+  <p>Trip hazards usually show up at joints, where one flag has lifted above its neighbour. If the rest of the walk is sound, we can replace just the damaged sections. When heaving and surface scaling run the length of the sidewalk, <a href="/services/concrete-replacement/">full replacement</a> is the better value. We will show you both prices and let you decide.</p>
+
+  <h2>Commercial sidewalks too</h2>
+  <p>We handle commercial concrete jobs: sidewalks, parking spaces and other structures for businesses. If your storefront or property needs a safe, compliant path, the same crew and the same 2-year warranty apply.</p>
+
+  <h2>Why property owners choose us</h2>
+  <p>15 years, hundreds of concrete jobs across Toronto and the surrounding area, and a simple rule: quote it in writing, show up on schedule, stand behind the work.</p>
+  <ul>
+    <li>2-year warranty on every pour</li>
+    <li>Satisfaction guaranteed</li>
+    <li>Free, no-obligation quotes</li>
+  </ul>
+
+  <p>We pour sidewalks across the GTA. See the full list on our <a href="/locations/">service areas</a> page.</p>
+</InnerPage>

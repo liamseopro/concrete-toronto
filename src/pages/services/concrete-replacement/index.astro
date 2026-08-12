@@ -1,0 +1,95 @@
+---
+import InnerPage from '../../../components/InnerPage.astro';
+
+const faqs = [
+  {
+    q: 'What does concrete replacement include?',
+    a: 'Everything: breaking out and hauling away the old surface, excavation, regrading, a compacted new base, and a fresh pour with a clean finish. Your written quote covers the job end to end.',
+  },
+  {
+    q: 'How disruptive is a replacement job?',
+    a: 'Most residential replacements, a driveway, walkway or patio, take a few days on site plus curing time. We keep the site tidy, barricade fresh concrete, and confirm the schedule in writing before we start.',
+  },
+  {
+    q: 'Can you replace asphalt with concrete?',
+    a: 'Yes, that is a common job. We remove the asphalt, build a proper compacted base, and pour concrete in its place for a surface that outlasts asphalt many times over with far less maintenance.',
+  },
+  {
+    q: 'Is replacement always better than repair?',
+    a: 'No. If the damage is isolated and the concrete is otherwise sound, a repair is the better value. We recommend replacement when cracking, heaving or surface failure is widespread, and we show you the evidence either way.',
+  },
+  {
+    q: 'What can you replace?',
+    a: 'Driveways, patios, walkways, sidewalks, porches, steps and slabs, residential and commercial. If it is worn-out concrete, we can take it out and pour it new.',
+  },
+];
+---
+
+<InnerPage
+  title="Concrete Replacement in Toronto & the GTA | Concrete Toronto"
+  description="Concrete replacement across Toronto and the GTA: old surfaces removed and fresh concrete poured for a clean, modern look. 2-year warranty. Free quotes."
+  canonical="https://concrete-toronto.ca/services/concrete-replacement/"
+  extraSchema={[{
+    '@type': 'Service',
+    '@id': 'https://concrete-toronto.ca/services/concrete-replacement/#service',
+    name: 'Concrete Replacement',
+    serviceType: 'Concrete removal and replacement',
+    description: 'Removal of old concrete surfaces and installation of fresh new concrete across Toronto and the Greater Toronto Area, backed by a 2-year warranty.',
+    provider: { '@id': 'https://concrete-toronto.ca/#business' },
+    areaServed: 'Greater Toronto Area',
+    url: 'https://concrete-toronto.ca/services/concrete-replacement/',
+  }]}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: 'Concrete Replacement' }]}
+  kicker="Concrete replacement · Toronto & GTA"
+  h1="Out with the old,"
+  h1Em="in with the new"
+  sub="We remove old concrete surfaces and install fresh, new concrete across Toronto and the GTA, backed by a 2-year warranty. Free quotes, no pressure."
+  sideIntro="Tell us what needs replacing and we'll send a clear, written quote."
+  galleryHeading="Recent concrete work"
+  gallery={[
+    { src: '/assets/img/concrete-driveway-fresh-pour-toronto.jpg', width: 1244, height: 1600, alt: 'Freshly poured concrete driveway replacing an old surface at a Toronto area home' },
+    { src: '/assets/img/concrete-pouring-mixer-toronto.jpg', width: 1600, height: 1066, alt: 'Fresh concrete pouring at a Toronto replacement job', cls: 'wide' },
+    { src: '/assets/img/concrete-sidewalk-between-houses-toronto.jpg', width: 1200, height: 1600, alt: 'New concrete sidewalk after replacement between Toronto houses' },
+  ]}
+  relatedKicker="Related services"
+  relatedHeading="More ways we can help"
+  related={[
+    { href: '/services/concrete-repair/', title: 'Concrete Repair', text: 'When a repair will do the job' },
+    { href: '/services/concrete-driveways/', title: 'Concrete Driveways', text: 'New driveway pours' },
+    { href: '/services/concrete-patios/', title: 'Concrete Patios', text: 'A new backyard patio' },
+    { href: '/services/concrete-sidewalks/', title: 'Concrete Sidewalks', text: 'Sidewalk replacement, by the book' },
+  ]}
+  quoteIntro="Send a few details about what needs replacing and we'll come back with a clear, written estimate."
+  messagePlaceholder="e.g. Remove and replace a cracked double driveway, about 600 sq ft"
+  faqHeading="Concrete replacement questions, answered"
+  faqs={faqs}
+  finalCtaText="Tell us what needs replacing and we'll send a free written quote. No pressure, no surprises."
+>
+  <p>Some concrete is simply done. When cracks run the full width of a slab, sections have heaved or sunk, or the surface is crumbling wherever you look, patching is money spent delaying the inevitable. <a href="/">Concrete Toronto</a> removes old surfaces and installs fresh, new concrete for a clean, modern look, across Toronto and the GTA.</p>
+
+  <p>Replacement is also the chance to fix what caused the failure. We regrade so water drains where it should, and we build a compacted base sized for the load. The new surface starts life on a better foundation than the old one ever had.</p>
+
+  <h2>What's included in our concrete replacement service</h2>
+  <p>Every replacement job is priced as a complete package in a written quote:</p>
+  <ul>
+    <li><strong>Break-out and haul-away</strong> of the old concrete or asphalt</li>
+    <li><strong>Excavation and regrading</strong> for proper drainage</li>
+    <li><strong>A compacted granular base</strong> built for freeze-thaw conditions</li>
+    <li><strong>Forms, pour and finish</strong>, broom texture or smooth where you want it</li>
+    <li><strong>Control joints</strong> placed to manage shrinkage</li>
+    <li><strong>Barricading, cleanup</strong> and clear curing guidance</li>
+  </ul>
+
+  <h2>Repair or replace: the honest test</h2>
+  <p>We quote both when both are on the table. Isolated damage on sound concrete is a <a href="/services/concrete-repair/">repair</a>. Widespread failure is a replacement. The difference in price is real, so we show you the condition of your surface and let the evidence make the case.</p>
+
+  <h2>Why homeowners choose us</h2>
+  <p>15 years, hundreds of concrete jobs across Toronto and the surrounding area. We show up on schedule, keep the site tidy, and back the new work with a 2-year warranty and a satisfaction guarantee.</p>
+  <ul>
+    <li>2-year warranty on every pour</li>
+    <li>Satisfaction guaranteed</li>
+    <li>Free, no-obligation quotes</li>
+  </ul>
+
+  <p>We replace concrete across the GTA, from Toronto to <a href="/locations/oshawa/">Oshawa</a> and <a href="/locations/north-york/">North York</a>. See every area on our <a href="/locations/">service areas</a> page.</p>
+</InnerPage>

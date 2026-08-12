@@ -1,0 +1,99 @@
+---
+import InnerPage from '../../../components/InnerPage.astro';
+
+const faqs = [
+  {
+    q: 'How much does concrete work cost in Scarborough?',
+    a: 'It depends on the size of the job and how much prep the site needs. Scarborough lots are often generous, which helps access and keeps prep straightforward. Every quote is free and in writing, so you know the exact price before work starts.',
+  },
+  {
+    q: 'My bungalow driveway is original. Repair or replace?',
+    a: 'If cracks are hairline and the slabs are still level, a repair can buy you years. If sections have heaved, settled or crumbled across most of the drive, replacement is the smarter spend. We will show you the evidence either way.',
+  },
+  {
+    q: 'Can you pour a driveway for a side lot or side entrance?',
+    a: 'Yes. Scarborough side lots and side entrances are everyday work for us. We plan the layout so the concrete drains away from the house and meets the sidewalk cleanly.',
+  },
+  {
+    q: 'Do you work near the Bluffs?',
+    a: 'Yes. We serve the whole of Scarborough, from Birch Cliff and Cliffside up through Wexford, Bendale, Agincourt and Malvern. Homes near the lake take extra wind and moisture, and we spec base and finish with that in mind.',
+  },
+  {
+    q: 'How do I get a quote?',
+    a: 'Fill out the free quote form and we will get back to you with an estimate. Prefer to talk? Call us at (416) 489-4898.',
+  },
+];
+---
+
+<InnerPage
+  title="Concrete Contractor in Scarborough | Concrete Toronto"
+  description="Concrete driveways, patios, walkways, porches, steps and parging in Scarborough. 2-year warranty, free quotes. Call (416) 489-4898."
+  canonical="https://concrete-toronto.ca/locations/scarborough/"
+  geo
+  geoPlacename="Scarborough, Ontario"
+  geoLat={43.7764}
+  geoLon={-79.2318}
+  extraSchema={[{
+    '@type': 'Service',
+    name: 'Concrete Contractor in Scarborough',
+    serviceType: 'Concrete installation, repair and parging',
+    description: 'Concrete driveways, patios, walkways, sidewalks, porches, steps, foundations, slabs, repair, replacement and parging for homes across Scarborough, Ontario. 2-year warranty and free quotes.',
+    provider: { '@id': 'https://concrete-toronto.ca/#business' },
+    areaServed: { '@type': 'Place', name: 'Scarborough, Ontario' },
+    url: 'https://concrete-toronto.ca/locations/scarborough/',
+  }]}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Service Areas', href: '/locations/' }, { label: 'Scarborough' }]}
+  kicker="Serving Scarborough"
+  h1="Concrete work in"
+  h1Em="Scarborough"
+  sub="Concrete driveways, patios, walkways, porches and steps across Scarborough, from Birch Cliff to Malvern, backed by a 2-year warranty."
+  sideIntro="Tell us about your Scarborough project and we'll send a clear, written quote."
+  cityPlaceholder="e.g. Scarborough"
+  galleryHeading="Recent concrete work"
+  gallery={[
+    { src: '/assets/img/concrete-driveway-fresh-pour-toronto.jpg', width: 1244, height: 1600, alt: 'Freshly poured concrete driveway at a Scarborough area home' },
+    { src: '/assets/img/concrete-sidewalk-between-houses-toronto.jpg', width: 1200, height: 1600, alt: 'New concrete sidewalk between houses in Scarborough', cls: 'wide' },
+    { src: '/assets/img/concrete-broom-finish-toronto.jpg', width: 1600, height: 1066, alt: 'Broom finish being applied to fresh concrete in Scarborough' },
+  ]}
+  relatedKicker="Nearby & related"
+  relatedHeading="More ways we can help"
+  related={[
+    { href: '/services/concrete-driveways/', title: 'Concrete Driveways', text: 'New pours and replacements' },
+    { href: '/services/concrete-porches/', title: 'Concrete Porches', text: 'Rebuild or resurface a worn porch' },
+    { href: '/services/parging/', title: 'Parging Services', text: 'Foundation walls and basements' },
+    { href: '/locations/north-york/', title: 'North York', text: 'Concrete work next door in North York' },
+    { href: '/locations/pickering/', title: 'Pickering', text: 'Serving Durham homes just east of Scarborough' },
+  ]}
+  quoteIntro="Send us a few details about your Scarborough home and we'll reply with a straightforward written quote."
+  messagePlaceholder="e.g. Replace the double driveway on my Scarborough bungalow"
+  faqHeading="Concrete work in Scarborough, answered"
+  faqs={faqs}
+  finalCtaText="Tell us about your Scarborough project through the form and we'll send a free written quote. No pressure, no surprises."
+>
+  <p>Scarborough is bungalow country. Postwar homes in Wexford, Bendale and Dorset Park sit on wide lots with double driveways poured decades ago, and after that many winters of salt and freeze-thaw, a lot of that original concrete is cracked, heaved or scaling. Down in Birch Cliff, Cliffside and Guildwood, homes near the Bluffs take wind and moisture off the lake all year, which is hard on any exterior surface. <a href="/">Concrete Toronto</a> handles concrete work in Scarborough every week, and we back each job with a 2-year warranty.</p>
+
+  <p>The good news about Scarborough lots is room to work. Driveways are wide, side yards are accessible, and most jobs have space for proper excavation and base work. That matters, because the base is what decides whether your new driveway or walkway is still level in twenty years.</p>
+
+  <h2>Concrete work in Scarborough: what we do</h2>
+  <p>Most of our Scarborough calls fall into a few buckets:</p>
+  <ul>
+    <li><a href="/services/concrete-driveways/">Concrete driveways</a>, replacements of original postwar pours and new driveways for renovated homes</li>
+    <li><a href="/services/concrete-patios/">Backyard patios</a> and <a href="/services/concrete-walkways/">side walkways</a></li>
+    <li><a href="/services/concrete-porches/">Porches</a> and <a href="/services/concrete-steps/">front steps</a> repaired, resurfaced or rebuilt</li>
+    <li><a href="/services/concrete-sidewalks/">Sidewalk sections</a> replaced where they have heaved</li>
+    <li><a href="/services/parging/">Parging</a> for foundation walls, plus <a href="/services/concrete-repair/">repair</a> and <a href="/services/concrete-replacement/">replacement</a> work</li>
+  </ul>
+  <p>Every job starts with proper prep. We remove what has failed, compact a granular base, and pour a mix suited to our freeze-thaw climate. Prep is where cheap jobs cut corners, and it is why so much flatwork fails early. Ours is built to stay put.</p>
+
+  <h2>Driveways, porches and steps, one visit</h2>
+  <p>A lot of Scarborough homes need the same trio: driveway, front porch and steps. Because our crew handles all of it, you get one quote, one schedule and one cleanup, and the finishes match across the whole frontage. If your foundation coating is also flaking, we can add <a href="/services/parging/">parging</a> to the same visit.</p>
+
+  <h2>Why Scarborough homeowners choose us</h2>
+  <p>15 years of local experience and hundreds of concrete jobs across Toronto and the surrounding areas. Straight answers about repair versus replacement, a written quote with no pressure, and a crew that shows up on schedule and leaves the site clean.</p>
+  <ul>
+    <li>2-year warranty on every job</li>
+    <li>Satisfaction guaranteed</li>
+    <li>Free, no-obligation quotes</li>
+  </ul>
+  <p>Getting started is simple. Send a few photos and a short description through the form, and we follow the same clear <a href="/#process">six-step process</a> on every job. We also work next door in <a href="/locations/north-york/">North York</a> and east along the 401 into <a href="/locations/pickering/">Pickering</a>, so one call covers family or rental properties nearby.</p>
+</InnerPage>

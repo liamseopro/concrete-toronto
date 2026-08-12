@@ -1,0 +1,95 @@
+---
+import InnerPage from '../../../components/InnerPage.astro';
+
+const faqs = [
+  {
+    q: 'Can you resurface my porch instead of rebuilding it?',
+    a: 'If the structure underneath is sound, yes, a new surface layer can bring a worn porch back. If the porch is sinking, pulling away from the house or crumbling through, a rebuild is the honest answer. We check the structure first and tell you which one you have.',
+  },
+  {
+    q: 'Why is my porch pulling away from the house?',
+    a: 'Usually settlement in the fill underneath, often where water has washed fines out from below the slab. We address the base when we rebuild, so the new porch stays put.',
+  },
+  {
+    q: 'Can you pour a new porch where there is none?',
+    a: 'Yes. We handle the full job: excavation, base, forming to the height your door needs, pouring and finishing, including any steps the entrance requires.',
+  },
+  {
+    q: 'Do porch jobs come with railings?',
+    a: 'We pour the concrete structure. Where local code requires a guard or railing, we tell you during the quote so the finished entrance is compliant.',
+  },
+  {
+    q: 'How long does a porch job take?',
+    a: 'A typical residential porch repair or pour is a few days on site, plus curing time before heavy use. We confirm the schedule in writing and stick to it.',
+  },
+];
+---
+
+<InnerPage
+  title="Concrete Porches in Toronto & the GTA | Concrete Toronto"
+  description="Concrete porch repair, resurfacing and new pours across Toronto and the GTA. Solid entrances backed by a 2-year warranty. Free quotes: (416) 489-4898."
+  canonical="https://concrete-toronto.ca/services/concrete-porches/"
+  extraSchema={[{
+    '@type': 'Service',
+    '@id': 'https://concrete-toronto.ca/services/concrete-porches/#service',
+    name: 'Concrete Porches',
+    serviceType: 'Concrete porch installation and repair',
+    description: 'Concrete porch repair, resurfacing and new pours across Toronto and the Greater Toronto Area, backed by a 2-year warranty.',
+    provider: { '@id': 'https://concrete-toronto.ca/#business' },
+    areaServed: 'Greater Toronto Area',
+    url: 'https://concrete-toronto.ca/services/concrete-porches/',
+  }]}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: 'Concrete Porches' }]}
+  kicker="Concrete porches · Toronto & GTA"
+  h1="A front porch that"
+  h1Em="welcomes"
+  sub="Concrete porch repairs, resurfacing and new pours across Toronto and the GTA, backed by a 2-year warranty. Free quotes, no pressure."
+  sideIntro="Tell us about your porch and we'll send a clear, written quote."
+  galleryHeading="Recent concrete work"
+  gallery={[
+    { src: '/assets/img/concrete-slab-front-entrance-toronto.jpg', width: 1198, height: 1600, alt: 'Fresh concrete slab and steps at the front entrance of a Toronto home' },
+    { src: '/assets/img/new-concrete-front-walkway-toronto.jpg', width: 1200, height: 1600, alt: 'New concrete walkway beside porch steps at a Toronto home', cls: 'wide' },
+    { src: '/assets/img/concrete-hand-trowel-finishing-toronto.jpg', width: 1600, height: 1066, alt: 'Hand trowel finishing fresh concrete at a Toronto job site' },
+  ]}
+  relatedKicker="Related services"
+  relatedHeading="More ways we can help"
+  related={[
+    { href: '/services/concrete-steps/', title: 'Concrete Steps', text: 'Steps that meet the porch right' },
+    { href: '/services/parging/', title: 'Parging Services', text: 'A clean parge coat on the porch base' },
+    { href: '/services/concrete-walkways/', title: 'Concrete Walkways', text: 'A walkway to match the new porch' },
+    { href: '/services/concrete-repair/', title: 'Concrete Repair', text: 'Surface repairs for a sound porch' },
+  ]}
+  quoteIntro="Send a few details about your porch and we'll come back with a clear, written estimate."
+  messagePlaceholder="e.g. Front porch surface is crumbling, needs repair or resurfacing"
+  faqHeading="Concrete porch questions, answered"
+  faqs={faqs}
+  finalCtaText="Tell us about your porch and we'll send a free written quote. No pressure, no surprises."
+>
+  <p>The porch is the handshake of the house, and it takes a beating: foot traffic every day, water off the roof line, and freeze-thaw all winter. <a href="/">Concrete Toronto</a> repairs, resurfaces and pours concrete porches across Toronto and the GTA.</p>
+
+  <p>Porch problems usually start at the base or the joint where the porch meets the house. Settlement opens a gap, water gets in, frost pries it wider, and within a few winters the surface is spalling and the edge is crumbling. When we rebuild, we fix the base first so the same cycle does not start over.</p>
+
+  <h2>What's included in our concrete porch service</h2>
+  <p>Every porch job is priced as a complete package in a written quote:</p>
+  <ul>
+    <li><strong>An honest assessment</strong>: resurface if the structure is sound, rebuild if it is not</li>
+    <li><strong>Excavation and a compacted base</strong> that addresses settlement</li>
+    <li><strong>Forming to the right height</strong> so the porch meets your door threshold properly</li>
+    <li><strong>Pour and finish</strong>, broom texture for grip</li>
+    <li><strong>Steps and landings</strong> where the entrance needs them</li>
+    <li><strong>Full cleanup</strong> and curing guidance before we leave</li>
+  </ul>
+
+  <h2>Porches, steps and parging in one visit</h2>
+  <p>A porch job often pairs naturally with new <a href="/services/concrete-steps/">steps</a> and a fresh <a href="/services/parging/">parge coat</a> on the porch base or foundation wall beside it. One crew, one quote, one schedule, and the whole entrance looks finished at once.</p>
+
+  <h2>Why homeowners choose us</h2>
+  <p>15 years of local experience and hundreds of concrete jobs across Toronto. We give you a straight answer on repair versus rebuild, a written price, and a schedule we keep.</p>
+  <ul>
+    <li>2-year warranty on every job</li>
+    <li>Satisfaction guaranteed</li>
+    <li>Free, no-obligation quotes</li>
+  </ul>
+
+  <p>We pour porches across the GTA, from Toronto to <a href="/locations/vaughan/">Vaughan</a> and <a href="/locations/whitby/">Whitby</a>. See every area on our <a href="/locations/">service areas</a> page.</p>
+</InnerPage>

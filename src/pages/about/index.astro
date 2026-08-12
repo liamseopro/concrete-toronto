@@ -1,0 +1,104 @@
+---
+import Base from '../../layouts/Base.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import { breadcrumbSchema } from '../../data/site.js';
+---
+
+<Base
+  title="About Concrete Toronto | 15 Years of Concrete Work in the GTA"
+  description="Concrete Toronto began with a passion for landscaping and construction. 15 years of residential and commercial concrete work across Toronto and the GTA. 2-year warranty on every job."
+  canonical="https://concrete-toronto.ca/about/"
+  jsonld={[breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'About' }])]}
+>
+
+<!-- ============== PAGE HERO ============== -->
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span class="sep">/</span> <span class="here">About</span>
+    </nav>
+    <p class="kicker">About Concrete Toronto</p>
+    <h1>Built on <span class="em">15 years</span> of concrete work</h1>
+    <p class="sub">Concrete Toronto began with a passion for landscaping and construction. Today we pour concrete for homes and businesses across Toronto and the GTA.</p>
+    <div class="hero-cta">
+      <a href="#quote" class="btn btn-primary">Get My Free Quote <span class="arrow">→</span></a>
+    </div>
+    <div class="hero-badges">
+      <span class="hbadge"><span class="tick">✓</span> 2-Year Warranty</span>
+      <span class="hbadge"><span class="tick">✓</span> Satisfaction Guaranteed</span>
+      <span class="hbadge"><span class="tick">✓</span> On Schedule, Every Time</span>
+      <span class="hbadge"><span class="tick">✓</span> 15 Years of Local Experience</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== MAIN CONTENT ============== -->
+<section class="section">
+  <div class="wrap">
+    <div class="content-grid">
+      <div class="prose">
+        <p>Concrete Toronto began with a passion for landscaping and construction. With 15 years of experience, our goal is to enhance the beauty of residential and commercial buildings across the city. Whether you need a concrete driveway, exterior steps and a porch, a backyard patio, or commercial foundations and parking spaces, we have the experience to deliver.</p>
+
+        <p>As one of the established concrete contractors in Toronto, we make sure every cement job starts with a strong foundation, because durability and looks both depend on what is underneath. That habit came from the landscaping side of the business: get the grading and the base right, and the surface above it takes care of itself for decades.</p>
+
+        <h2>Residential and commercial work</h2>
+        <p>On the residential side, most of our work is the concrete you live with every day: <a href="/services/concrete-driveways/">driveways</a>, <a href="/services/concrete-patios/">backyard patios</a>, <a href="/services/concrete-walkways/">walkways</a>, <a href="/services/concrete-porches/">porches</a> and <a href="/services/concrete-steps/">steps</a>. On the commercial side, we pour <a href="/services/concrete-foundations/">foundations</a>, parking spaces, sidewalks and other concrete structures for businesses across the GTA.</p>
+
+        <p>Over 15 years we have completed hundreds of concrete jobs in Toronto and the surrounding areas, from Scarborough and North York out to Vaughan, Markham, Richmond Hill and the Durham Region cities along the lake. You can see the full list on our <a href="/locations/">service areas</a> page.</p>
+
+        <h2>How we stand behind the work</h2>
+        <ul>
+          <li><strong>2-year warranty.</strong> We stand by our services and make sure our customers are protected.</li>
+          <li><strong>Satisfaction guaranteed.</strong> We guarantee your satisfaction in every project we carry out.</li>
+          <li><strong>Timely services.</strong> We understand how much the project duration matters and stick to the schedule.</li>
+          <li><strong>Local experience.</strong> Hundreds of concrete jobs completed in Toronto and surrounding areas.</li>
+        </ul>
+
+        <p>Every job follows the same six-step process: initial consultation, design and planning, site preparation, mixing and pouring, finishing touches, and a final inspection and clean-up. You can read the details on the <a href="/#process">homepage process section</a>, or send the form and we will walk you through it for your project.</p>
+      </div>
+      <aside class="side-card reveal">
+        <h3>Get a free quote</h3>
+        <p>Tell us about your project and we will come back with a clear, written estimate. No pressure, no obligation.</p>
+        <ul>
+          <li><span class="tick">✓</span> Free, no-obligation estimate</li>
+          <li><span class="tick">✓</span> 2-year warranty on our work</li>
+          <li><span class="tick">✓</span> Satisfaction guaranteed</li>
+        </ul>
+        <a href="#quote" class="btn btn-primary">Get My Free Quote</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============== MINI GALLERY ============== -->
+<section class="section work" style="padding-block: clamp(48px, 6vw, 84px);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Our work</p>
+      <h2>Recent jobs around the GTA</h2>
+    </div>
+    <div class="gallery" style="grid-auto-rows: 240px;">
+      <div class="gtile reveal"><img src="/assets/img/concrete-pouring-mixer-toronto.jpg" width="1600" height="1066" alt="Concrete mixer chute pouring fresh concrete at a Toronto job site" loading="lazy" decoding="async" /></div>
+      <div class="gtile wide reveal"><img src="/assets/img/concrete-screeding-crew-toronto.jpg" width="1600" height="1066" alt="Concrete Toronto crew screeding a fresh slab in the GTA" loading="lazy" decoding="async" /></div>
+      <div class="gtile reveal"><img src="/assets/img/concrete-broom-finish-toronto.jpg" width="1600" height="1066" alt="Broom finish being applied to fresh concrete in Toronto" loading="lazy" decoding="async" /></div>
+    </div>
+  </div>
+</section>
+
+<QuoteForm
+  intro="Tell us a little about your project and we'll get back to you with a free, no-obligation estimate."
+  messagePlaceholder="e.g. New backyard patio and a side walkway, about 600 sq ft total"
+/>
+
+<!-- ============== FINAL CTA ============== -->
+<section class="section final">
+  <div class="wrap">
+    <h2 class="reveal">Get your free quote today</h2>
+    <p class="reveal">15 years of local experience, a 2-year warranty, and a crew that sticks to the schedule. Tell us about your project and we will price it for you.</p>
+    <div class="btns reveal">
+      <a href="#quote" class="btn btn-light">Get My Free Quote</a>
+    </div>
+  </div>
+</section>
+
+</Base>

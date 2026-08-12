@@ -1,0 +1,98 @@
+---
+import InnerPage from '../../../components/InnerPage.astro';
+
+const faqs = [
+  {
+    q: 'How much does concrete work cost in Whitby?',
+    a: 'It depends on the size of the job and how much prep the site needs. Every quote from Concrete Toronto is free and in writing, so you know the exact price before any work starts.',
+  },
+  {
+    q: 'Do you work on heritage homes in downtown Whitby?',
+    a: 'Yes. Older homes need a careful touch: matching existing finishes, protecting mature landscaping, and respecting the character of the street. We have done concrete work on plenty of older GTA homes.',
+  },
+  {
+    q: 'Do you serve Brooklin and the north end?',
+    a: 'Yes. We work across Whitby, from the downtown heritage streets up through Brooklin and the newer communities in the north end.',
+  },
+  {
+    q: 'Can you pour a driveway and patio in one visit?',
+    a: 'Yes. Bundling flatwork into one visit gets you one quote, one schedule and one cleanup, and usually a better overall price than splitting the work.',
+  },
+  {
+    q: 'How do I get a quote?',
+    a: 'Fill out the free quote form and we will get back to you with an estimate. Prefer to talk? Call us at (416) 489-4898.',
+  },
+];
+---
+
+<InnerPage
+  title="Concrete Contractor in Whitby | Concrete Toronto"
+  description="Concrete driveways, patios, walkways, porches, steps and slabs in Whitby, from downtown heritage homes to Brooklin. 2-year warranty, free quotes."
+  canonical="https://concrete-toronto.ca/locations/whitby/"
+  geo
+  geoPlacename="Whitby, Ontario"
+  geoLat={43.8975}
+  geoLon={-78.9429}
+  extraSchema={[{
+    '@type': 'Service',
+    name: 'Concrete Contractor in Whitby',
+    serviceType: 'Concrete installation, repair and parging',
+    description: 'Concrete driveways, patios, walkways, sidewalks, porches, steps, foundations, slabs, repair, replacement and parging for homes and businesses across Whitby, Ontario. 2-year warranty and free quotes.',
+    provider: { '@id': 'https://concrete-toronto.ca/#business' },
+    areaServed: { '@type': 'Town', name: 'Whitby, Ontario' },
+    url: 'https://concrete-toronto.ca/locations/whitby/',
+  }]}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Service Areas', href: '/locations/' }, { label: 'Whitby' }]}
+  kicker="Serving Whitby"
+  h1="Concrete work in"
+  h1Em="Whitby"
+  sub="Concrete driveways, patios, walkways, porches and steps across Whitby, from downtown heritage homes to Brooklin, backed by a 2-year warranty."
+  sideIntro="Tell us about your Whitby project and we'll send a clear, written quote."
+  cityPlaceholder="e.g. Whitby"
+  galleryHeading="Recent concrete work"
+  gallery={[
+    { src: '/assets/img/curved-concrete-walkway-entrance-toronto.jpg', width: 1280, height: 1600, alt: 'Curved concrete walkway at a Whitby area front entrance' },
+    { src: '/assets/img/concrete-screeding-crew-toronto.jpg', width: 1600, height: 1066, alt: 'Crew screeding a fresh concrete pour in Whitby', cls: 'wide' },
+    { src: '/assets/img/concrete-driveway-fresh-pour-toronto.jpg', width: 1244, height: 1600, alt: 'Freshly poured concrete driveway at a Whitby home' },
+  ]}
+  relatedKicker="Nearby & related"
+  relatedHeading="More ways we can help"
+  related={[
+    { href: '/services/concrete-driveways/', title: 'Concrete Driveways', text: 'New pours and replacements' },
+    { href: '/services/concrete-patios/', title: 'Concrete Patios', text: 'Backyard patios built to last' },
+    { href: '/services/parging/', title: 'Parging Services', text: 'Foundation walls on older homes' },
+    { href: '/locations/oshawa/', title: 'Oshawa', text: 'Concrete work next door in Oshawa' },
+    { href: '/locations/ajax/', title: 'Ajax', text: 'Concrete work in Ajax' },
+  ]}
+  quoteIntro="Send us a few details about your Whitby home and we'll reply with a straightforward written quote."
+  messagePlaceholder="e.g. Driveway and backyard patio, Brooklin area"
+  faqHeading="Concrete work in Whitby, answered"
+  faqs={faqs}
+  finalCtaText="Tell us about your Whitby project through the form and we'll send a free written quote. No pressure, no surprises."
+>
+  <p>Whitby offers a concrete crew real variety. The downtown heritage streets have century homes where the porch, steps and foundation coating all need a careful hand. The newer communities up through Brooklin and the north end have builder-grade flatwork hitting its first repair cycle. <a href="/">Concrete Toronto</a> works across all of it, and we back each job with a 2-year warranty.</p>
+
+  <p>Older Whitby homes deserve respect. We match existing finishes where concrete meets the original house, protect mature landscaping during excavation, and keep the site tidy on streets where the neighbours are close. Newer homes get the same discipline, focused on the base prep that builder pours often skip.</p>
+
+  <h2>Concrete work in Whitby: what we do</h2>
+  <p>Most of our Whitby calls fall into a few buckets:</p>
+  <ul>
+    <li><a href="/services/concrete-driveways/">Concrete driveways</a>, replacements and new pours</li>
+    <li><a href="/services/concrete-patios/">Backyard patios</a> and <a href="/services/concrete-walkways/">walkways</a></li>
+    <li><a href="/services/concrete-porches/">Porches</a> and <a href="/services/concrete-steps/">steps</a>, repaired or rebuilt</li>
+    <li><a href="/services/parging/">Parging</a> for foundation walls, with waterproofing where water is the real problem</li>
+    <li><a href="/services/concrete-repair/">Repair</a>, <a href="/services/concrete-replacement/">replacement</a> and <a href="/services/concrete-slabs/">slabs</a> for sheds and garages</li>
+  </ul>
+
+  <h2>Bundle the flatwork, save the hassle</h2>
+  <p>Driveway and patio in the same season? One visit gets you one quote, one schedule, one cleanup and a consistent finish across the property. We will price the bundle honestly, and if part of the work only needs a repair, we say so.</p>
+
+  <h2>Why Whitby homeowners choose us</h2>
+  <p>15 years of local experience and hundreds of concrete jobs across Toronto and the surrounding areas. Straight answers, a written quote with no pressure, and a crew that sticks to the schedule.</p>
+  <ul>
+    <li>2-year warranty on every job</li>
+    <li>Satisfaction guaranteed</li>
+    <li>Free, no-obligation quotes</li>
+  </ul>
+  <p>Getting started is simple. Send a few photos and a short description through the form, and we follow the same clear <a href="/#process">six-step process</a> on every job. We also work next door in <a href="/locations/oshawa/">Oshawa</a> and <a href="/locations/ajax/">Ajax</a>, so one call covers family or rental properties nearby.</p>
+</InnerPage>

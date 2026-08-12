@@ -1,0 +1,27 @@
+---
+// Page attribution for the quote form's no-JS path.
+//
+// The form posts cross-origin to the n8n webhook. Under the default
+// strict-origin-when-cross-origin policy the browser sends only the ORIGIN in
+// Referer, never the path, so the backend cannot recover which page the lead
+// came from. Without this field every no-JS lead is recorded against the
+// homepage.
+//
+// main.js overrides this with the live URL for the JS path (fd.set, so it
+// replaces rather than duplicates).
+//
+// Lives in one component so the attribution rule has a single definition,
+// shared by every page through QuoteForm.astro.
+
+if (!Astro.site) {
+  // Fail the build loudly rather than silently attributing every lead to a
+  // wrong or relative URL.
+  throw new Error(
+    "SourceUrlField requires `site` in astro.config.mjs: the quote form's " +
+    'no-JS page attribution is derived from it.'
+  );
+}
+
+const sourceUrl = new URL(Astro.url.pathname, Astro.site).href;
+---
+<input type="hidden" name="source_url" value={sourceUrl} />

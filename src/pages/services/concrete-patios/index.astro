@@ -1,0 +1,95 @@
+---
+import InnerPage from '../../../components/InnerPage.astro';
+
+const faqs = [
+  {
+    q: 'How big should my concrete patio be?',
+    a: 'Think about how you will use it. A table and four chairs needs roughly 12 by 12 feet, and a lounge area with a grill wants more. During the consultation we measure the yard, talk through how you use the space, and recommend a size and layout that fits both.',
+  },
+  {
+    q: 'Will a concrete patio crack in Toronto winters?',
+    a: 'All concrete can develop hairline cracks, but the big failures come from poor prep. We compact a granular base, slope the patio to shed water away from the house, and place control joints so any shrinkage cracking happens where we planned it.',
+  },
+  {
+    q: 'What finish works best for a patio?',
+    a: 'A broom or light texture finish gives the best footing when the surface is wet or icy. We can also add simple borders or a smoother trowel finish in seating areas. We will show you options during the quote visit.',
+  },
+  {
+    q: 'How long before I can use a new patio?',
+    a: 'Foot traffic is fine after 24 to 48 hours. Give it about a week before heavy furniture and a full month before the heaviest loads, while the concrete reaches full strength.',
+  },
+  {
+    q: 'Can you replace my old patio?',
+    a: 'Yes. We remove the old surface, regrade and compact the base, and pour fresh concrete for a clean, modern look. Removal and disposal are included in your written quote.',
+  },
+];
+---
+
+<InnerPage
+  title="Concrete Patios in Toronto & the GTA | Concrete Toronto"
+  description="Concrete patio installation across Toronto and the GTA. Level, durable backyard patios finished to shed water, backed by a 2-year warranty. Free quotes."
+  canonical="https://concrete-toronto.ca/services/concrete-patios/"
+  extraSchema={[{
+    '@type': 'Service',
+    '@id': 'https://concrete-toronto.ca/services/concrete-patios/#service',
+    name: 'Concrete Patios',
+    serviceType: 'Concrete patio installation',
+    description: 'Concrete patio design and installation across Toronto and the Greater Toronto Area, backed by a 2-year warranty.',
+    provider: { '@id': 'https://concrete-toronto.ca/#business' },
+    areaServed: 'Greater Toronto Area',
+    url: 'https://concrete-toronto.ca/services/concrete-patios/',
+  }]}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: 'Concrete Patios' }]}
+  kicker="Concrete patios · Toronto & GTA"
+  h1="Backyard patios, poured"
+  h1Em="level & solid"
+  sub="We pour concrete patios across Toronto and the GTA: level, finished to shed water, and backed by a 2-year warranty. Free quotes, no pressure."
+  sideIntro="Tell us about the patio you have in mind and we'll send a clear, written quote."
+  galleryHeading="Recent concrete work"
+  gallery={[
+    { src: '/assets/img/concrete-hand-trowel-finishing-toronto.jpg', width: 1600, height: 1066, alt: 'Hand trowel finishing a fresh concrete patio surface in Toronto' },
+    { src: '/assets/img/concrete-screeding-crew-toronto.jpg', width: 1600, height: 1066, alt: 'Crew screeding a fresh concrete pour at a Toronto area home', cls: 'wide' },
+    { src: '/assets/img/concrete-slab-front-entrance-toronto.jpg', width: 1198, height: 1600, alt: 'Fresh concrete slab at the entrance of a Toronto home' },
+  ]}
+  relatedKicker="Related services"
+  relatedHeading="More ways we can help"
+  related={[
+    { href: '/services/concrete-walkways/', title: 'Concrete Walkways', text: 'Connect the patio to the rest of the yard' },
+    { href: '/services/concrete-driveways/', title: 'Concrete Driveways', text: 'New driveways on a compacted base' },
+    { href: '/services/concrete-repair/', title: 'Concrete Repair', text: 'Fix cracks and worn spots on an existing patio' },
+    { href: '/services/parging/', title: 'Parging Services', text: 'Tidy up the foundation wall beside the patio' },
+  ]}
+  quoteIntro="Send a few details about your patio project and we'll come back with a clear, written estimate."
+  messagePlaceholder="e.g. New backyard patio, about 20 x 14 feet, broom finish"
+  faqHeading="Concrete patio questions, answered"
+  faqs={faqs}
+  finalCtaText="Tell us about the patio you want and we'll send a free written quote. No pressure, no surprises."
+>
+  <p>A good patio turns the backyard into usable living space, and concrete is the practical way to build it. It is durable, low-maintenance and cost-effective compared to most other materials, and it handles patio furniture, grills and freeze-thaw winters without complaint. <a href="/">Concrete Toronto</a> designs and pours concrete patios across Toronto and the GTA.</p>
+
+  <p>The two things that decide how a patio ages are the base and the slope. We excavate, compact a granular base, and grade the surface so water runs away from the house. Skip either one and you get pooling water in summer and heaving slabs in winter. We do not skip either one.</p>
+
+  <h2>What's included in our concrete patio service</h2>
+  <p>Every patio job is priced as a complete package in a written quote:</p>
+  <ul>
+    <li><strong>Design and layout</strong> based on how you use the yard, with measurements and material selection</li>
+    <li><strong>Excavation and a compacted granular base</strong> built for freeze-thaw conditions</li>
+    <li><strong>Proper slope</strong> so meltwater and rain drain away from your foundation</li>
+    <li><strong>Forms, pour and finish</strong>, broom texture or smooth trowel where you want it</li>
+    <li><strong>Control joints</strong> placed to manage natural shrinkage</li>
+    <li><strong>Full cleanup</strong> and clear curing guidance before we leave</li>
+  </ul>
+
+  <h2>Pair it with the rest of the yard</h2>
+  <p>A patio rarely stands alone. Most of our patio jobs connect to a <a href="/services/concrete-walkways/">walkway</a>, a set of <a href="/services/concrete-steps/">steps</a> down from a door, or a fresh look at the <a href="/services/parging/">foundation wall</a> behind it. Because our crew handles all of it, you get one quote, one schedule and one cleanup instead of coordinating three trades.</p>
+
+  <h2>Why homeowners choose us</h2>
+  <p>15 years of concrete work across Toronto means we have seen every yard shape and soil condition the city offers. We give you a straight recommendation, a written price, and a schedule we stick to.</p>
+  <ul>
+    <li>2-year warranty on every pour</li>
+    <li>Satisfaction guaranteed</li>
+    <li>Free, no-obligation quotes</li>
+  </ul>
+
+  <p>Not sure what size or finish fits your yard? Send the form with a rough idea and we will talk it through during the consultation. We work across the GTA: see our <a href="/locations/">service areas</a>.</p>
+</InnerPage>

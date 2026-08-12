@@ -1,0 +1,98 @@
+---
+import InnerPage from '../../../components/InnerPage.astro';
+
+const faqs = [
+  {
+    q: 'Do you pour foundations for houses and businesses?',
+    a: 'Yes. We handle residential foundation work like additions and garages, and commercial concrete jobs including foundations, parking spaces and other structures for businesses across Toronto and the GTA.',
+  },
+  {
+    q: 'Do you offer waterproofing for foundations?',
+    a: 'Yes. We provide waterproofing services to protect concrete foundations from water damage and extend their lifespan. It is one of the smartest add-ons you can make while a foundation is being built or exposed.',
+  },
+  {
+    q: 'Are you familiar with Toronto building requirements?',
+    a: 'Yes. Our contractors know Toronto’s regulations and make sure your project complies with local requirements. Foundation work is inspected work, and we build to pass.',
+  },
+  {
+    q: 'What is parging and does my foundation need it?',
+    a: 'Parging is a thin cement-based coat applied to the exposed part of a foundation wall. It protects the surface from moisture and weather and gives a clean, finished look. If your foundation coating is cracked or flaking, our parging service can restore it.',
+  },
+  {
+    q: 'How is a foundation quoted?',
+    a: 'Foundation jobs are scoped individually because soil conditions, access and engineering requirements vary. Send the form with your project details and we will arrange a consultation and a written price.',
+  },
+];
+---
+
+<InnerPage
+  title="Concrete Foundations in Toronto & the GTA | Concrete Toronto"
+  description="Concrete foundation work for homes and businesses across Toronto and the GTA, with waterproofing and parging. 2-year warranty. Free consultations."
+  canonical="https://concrete-toronto.ca/services/concrete-foundations/"
+  extraSchema={[{
+    '@type': 'Service',
+    '@id': 'https://concrete-toronto.ca/services/concrete-foundations/#service',
+    name: 'Concrete Foundations',
+    serviceType: 'Concrete foundation installation',
+    description: 'Concrete foundation work for residential and commercial projects across Toronto and the Greater Toronto Area, with waterproofing and parging, backed by a 2-year warranty.',
+    provider: { '@id': 'https://concrete-toronto.ca/#business' },
+    areaServed: 'Greater Toronto Area',
+    url: 'https://concrete-toronto.ca/services/concrete-foundations/',
+  }]}
+  crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: 'Concrete Foundations' }]}
+  kicker="Concrete foundations · Toronto & GTA"
+  h1="Foundations, done"
+  h1Em="right the first time"
+  sub="Residential and commercial concrete foundation work across Toronto and the GTA, with waterproofing and parging. 2-year warranty, free consultations."
+  sideIntro="Tell us about your foundation project and we'll arrange a consultation and a written quote."
+  galleryHeading="Recent concrete work"
+  gallery={[
+    { src: '/assets/img/concrete-pouring-mixer-toronto.jpg', width: 1600, height: 1066, alt: 'Fresh concrete pouring from a mixer chute at a Toronto job site' },
+    { src: '/assets/img/concrete-screeding-crew-toronto.jpg', width: 1600, height: 1066, alt: 'Crew screeding a fresh concrete pour in the GTA', cls: 'wide' },
+    { src: '/assets/img/concrete-broom-finish-toronto.jpg', width: 1600, height: 1066, alt: 'Broom finish being applied to fresh concrete in Toronto' },
+  ]}
+  relatedKicker="Related services"
+  relatedHeading="More ways we can help"
+  related={[
+    { href: '/services/parging/', title: 'Parging Services', text: 'Protect and finish exposed foundation walls' },
+    { href: '/services/concrete-slabs/', title: 'Concrete Slabs', text: 'Slabs for garages, sheds and additions' },
+    { href: '/services/concrete-repair/', title: 'Concrete Repair', text: 'Foundation surface repairs' },
+    { href: '/services/concrete-driveways/', title: 'Concrete Driveways', text: 'Flatwork once the structure is in' },
+  ]}
+  quoteIntro="Send a few details about your foundation project and we'll arrange a consultation and a written estimate."
+  messagePlaceholder="e.g. Foundation for a single-car garage addition, plus waterproofing"
+  faqHeading="Concrete foundation questions, answered"
+  faqs={faqs}
+  finalCtaText="Tell us about your foundation project and we'll set up a consultation. No pressure, no surprises."
+>
+  <p>Everything above a foundation depends on it, which is why we treat foundation work as the most serious concrete we pour. <a href="/">Concrete Toronto</a> handles residential and commercial foundation projects across Toronto and the GTA: additions, garages, and foundations and parking spaces for businesses.</p>
+
+  <p>As a contractor that started in landscaping and construction, we know the ground decides how a foundation behaves. Soil bearing, drainage and frost depth all shape the design, and our crews prepare every site with that in mind before a form goes in.</p>
+
+  <h2>What's included in our concrete foundation service</h2>
+  <p>Foundation jobs are scoped individually, but every quote covers the work end to end:</p>
+  <ul>
+    <li><strong>Consultation and site evaluation</strong>, including soil and drainage conditions</li>
+    <li><strong>Design and planning</strong> with measurements, layout and material selection</li>
+    <li><strong>Excavation coordination and site preparation</strong></li>
+    <li><strong>Forming, pouring and finishing</strong> to the engineered spec</li>
+    <li><strong>Waterproofing</strong> to protect the foundation from water damage</li>
+    <li><strong>Parging</strong> for a protected, finished surface above grade</li>
+    <li><strong>Final inspection and clean-up</strong> before we hand the site over</li>
+  </ul>
+
+  <h2>Waterproofing and parging</h2>
+  <p>Concrete is strong, but water is patient. Our <a href="/services/parging/">parging service</a> protects the exposed band of foundation above grade, and our waterproofing protects it below. Together they keep moisture off the wall and out of the basement, which matters in Toronto's freeze-thaw climate more than almost anywhere.</p>
+
+  <h2>Compliant, inspected work</h2>
+  <p>Foundation work is regulated work. Our contractors know Toronto's by-laws and building requirements, and we make sure your project complies with local regulations from the first sketch to the final inspection.</p>
+
+  <h2>Why builders and homeowners choose us</h2>
+  <ul>
+    <li>15 years of residential and commercial concrete experience</li>
+    <li>2-year warranty on our work</li>
+    <li>One crew for foundation, waterproofing, parging and the flatwork that follows</li>
+  </ul>
+
+  <p>Start with a consultation: send the form with your project details and we will take it from there. We work across the GTA, see our <a href="/locations/">service areas</a>.</p>
+</InnerPage>

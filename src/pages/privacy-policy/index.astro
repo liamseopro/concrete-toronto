@@ -1,0 +1,61 @@
+---
+import Base from '../../layouts/Base.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import { SITE, breadcrumbSchema } from '../../data/site.js';
+---
+
+<Base
+  title="Privacy Policy | Concrete Toronto"
+  description="How Concrete Toronto collects, uses and protects the personal information you share through our quote form and by phone."
+  canonical="https://concrete-toronto.ca/privacy-policy/"
+  jsonld={[breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Privacy Policy' }])]}
+>
+
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span class="sep">/</span> <span class="here">Privacy Policy</span>
+    </nav>
+    <p class="kicker">Privacy policy</p>
+    <h1>Privacy <span class="em">policy</span></h1>
+    <p class="sub">How Concrete Toronto handles the personal information you share with us. Last updated: August 2026.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="prose">
+      <p>Concrete Toronto ("we", "us") is a concrete contractor based in Toronto, Ontario. This policy explains what personal information we collect through concrete-toronto.ca, how we use it, and the choices you have. We handle personal information in line with Canada's Personal Information Protection and Electronic Documents Act (PIPEDA).</p>
+
+      <h2>What we collect</h2>
+      <p>When you fill out our quote form, we collect the details you type into it: your name, phone number, email address, project address, city, postal code and project description. When you call us, we collect whatever you share on the call. We do not run analytics or advertising trackers on this site, and we do not use cookies to identify you.</p>
+
+      <h2>How we use it</h2>
+      <ul>
+        <li>To respond to your quote request and prepare an estimate</li>
+        <li>To schedule site visits and carry out the work</li>
+        <li>To communicate with you about your project, including warranty follow-up</li>
+      </ul>
+      <p>We do not sell, rent or trade your personal information, and we do not use it for unrelated marketing.</p>
+
+      <h2>Who handles it</h2>
+      <p>Quote form submissions are processed through our automation provider (an n8n webhook endpoint) so the right person on our team gets your request quickly. Information may be stored on systems located outside Canada, where it may be subject to the laws of those jurisdictions. We keep service providers to the minimum needed to run the business.</p>
+
+      <h2>How long we keep it</h2>
+      <p>We keep quote requests and project records as long as needed to serve you, honour warranty obligations (our warranty runs 2 years), and meet ordinary business and tax record-keeping requirements. After that, records are deleted or destroyed.</p>
+
+      <h2>Your rights</h2>
+      <p>You can ask us what personal information we hold about you, ask us to correct it, or ask us to delete it (subject to legal record-keeping requirements). To make a request, call us at <a href={SITE.phoneTel}>{SITE.phoneDisplay}</a> or use the <a href="/#quote">quote form</a> and mark your message as a privacy request.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>If we change how we handle personal information, we will update this page and the date above. If you have questions about this policy, call <a href={SITE.phoneTel}>{SITE.phoneDisplay}</a>.</p>
+    </div>
+  </div>
+</section>
+
+<QuoteForm
+  intro="Questions about your project, or about how we handle your information? Send the form and we'll get back to you."
+  messagePlaceholder="e.g. I'd like a quote on a new walkway (or: privacy request)"
+/>
+
+</Base>
