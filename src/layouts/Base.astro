@@ -2,7 +2,9 @@
 interface Props {
   title: string;
   description: string;
-  canonical: string;
+  // Optional: the 404 page omits it (it is served at arbitrary bad URLs, so
+  // there is no canonical target to claim).
+  canonical?: string;
   ogTitle?: string;
   ogDescription?: string;
   twitterTitle?: string;
@@ -52,22 +54,24 @@ const graph = {
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<!-- Canonicalize extensionless /index URLs: GitHub Pages serves index.html at
-     /index with no redirect, duplicating every page. (/index.html, non-slash
-     and www variants are already 301'd by Pages.) -->
+<!-- Canonicalize duplicate /index and /index.html URLs: GitHub Pages serves
+     both with a 200 and no redirect, duplicating every page. (Non-slash and
+     www variants are already 301'd by Pages.) -->
 <script is:inline>
 (function () {
   var p = window.location.pathname;
-  if (p === "/index" || p.slice(-6) === "/index") {
-    window.location.replace((p === "/index" ? "/" : p.slice(0, -5)) + window.location.search + window.location.hash);
-  }
+  var base = null;
+  if (p === "/index" || p === "/index.html") base = "/";
+  else if (p.slice(-6) === "/index") base = p.slice(0, -5);
+  else if (p.slice(-11) === "/index.html") base = p.slice(0, -10);
+  if (base !== null) window.location.replace(base + window.location.search + window.location.hash);
 })();
 </script>
 
 <!-- ============== PRIMARY SEO ============== -->
 <title>{title}</title>
 <meta name="description" content={description} />
-<link rel="canonical" href={canonical} />
+{canonical && <link rel="canonical" href={canonical} />}
 <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
 <meta name="theme-color" content="#1b1e23" />
 
@@ -87,7 +91,7 @@ const graph = {
 <meta property="og:site_name" content="Concrete Toronto" />
 <meta property="og:title" content={ogTitle} />
 <meta property="og:description" content={ogDescription} />
-<meta property="og:url" content={canonical} />
+{canonical && <meta property="og:url" content={canonical} />}
 <meta property="og:image" content="https://concrete-toronto.ca/assets/img/og-image.jpg" />
 <meta property="og:image:alt" content="Fresh concrete being poured and floated on a Toronto job site" />
 <meta property="og:image:width" content="1200" />

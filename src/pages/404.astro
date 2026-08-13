@@ -1,0 +1,43 @@
+---
+// Custom 404. GitHub Pages serves docs/404.html (with a 404 status) for any
+// unmatched URL, so this page renders at arbitrary bad paths: every link and
+// asset must stay root-absolute, and there is no canonical to claim, so none
+// is rendered. noindex on top of the 404 status for belt and braces; absent
+// from sitemap.xml and llms.txt.
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Page Not Found | Concrete Toronto"
+  description="The page you're looking for doesn't exist. Head back to Concrete Toronto for concrete driveways, patios, walkways and more across the GTA."
+  noindex={true}
+>
+
+<section class="section">
+  <div class="wrap">
+    <div class="form-card form-outcome centered">
+      <h1>Page not found</h1>
+      <p>
+        The page you're after doesn't exist or may have moved. Everything we
+        do is only a click away though.
+      </p>
+      <p class="last">
+        Looking for a quote on a driveway, patio, walkway or any other
+        concrete work? Call
+        <a href="tel:+14164894898" class="accent-link">(416) 489-4898</a>
+        or send us the form and we'll get you a free estimate.
+      </p>
+      <div class="btns">
+        <a class="btn btn-primary" href="/#quote">Get a Free Quote <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-light" href="/">Back to home</a>
+      </div>
+      <p class="last">
+        <a href="/services/" class="accent-link">Our services</a> ·
+        <a href="/locations/" class="accent-link">Service areas</a> ·
+        <a href="/about/" class="accent-link">About us</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</Base>
