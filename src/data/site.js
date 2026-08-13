@@ -7,7 +7,9 @@ export const SITE = {
   url: 'https://concrete-toronto.ca',
   phoneDisplay: '(289) 906-0097',
   phoneTel: 'tel:+12899060097',
-  phoneSchema: '+1-289-906-0097',
+  // Schema keeps the canonical citation number (the NAP the citations were
+  // built on); the 289 tracking number is display-only.
+  phoneSchema: '+1-416-489-4898',
 };
 
 export const SERVICES = [
@@ -45,7 +47,7 @@ export const businessSchema = {
   name: 'Concrete Toronto',
   url: 'https://concrete-toronto.ca/',
   image: 'https://concrete-toronto.ca/assets/img/og-image.jpg',
-  telephone: '+1-289-906-0097',
+  telephone: '+1-416-489-4898',
   description:
     'Concrete Toronto is a concrete contractor in Toronto, Ontario, installing and repairing concrete driveways, patios, walkways, sidewalks, porches, steps, foundations and slabs, with parging services for walls and basements. 2-year warranty and satisfaction guaranteed.',
   knowsAbout: [
