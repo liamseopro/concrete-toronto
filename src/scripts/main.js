@@ -139,7 +139,7 @@
     tel.addEventListener("input", function () {
       var d = tel.value.replace(/\D/g, "");
       // Drop a leading North American country code so "+1 416 489 4898" and
-      // "1-416-489-4898" don't get their 1 mistaken for the area code (which
+      // "1-289-906-0097" don't get their 1 mistaken for the area code (which
       // silently truncated the last digit before it reached the webhook).
       if (d.length > 10 && d.charAt(0) === "1") d = d.slice(1);
       d = d.slice(0, 10);
