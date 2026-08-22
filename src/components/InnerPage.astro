@@ -8,7 +8,7 @@
 
 import Base from '../layouts/Base.astro';
 import QuoteForm from './QuoteForm.astro';
-import { faqSchema, breadcrumbSchema } from '../data/site.js';
+import { SITE, faqSchema, breadcrumbSchema } from '../data/site.js';
 
 interface Crumb { label: string; href?: string }
 interface Faq { q: string; a: string }
@@ -30,6 +30,7 @@ interface Props {
   h1: string;
   h1Em?: string;
   sub: string;
+  heroImage?: GalleryImg;
   sideIntro: string;
   galleryHeading?: string;
   gallery?: GalleryImg[];
@@ -67,27 +68,45 @@ const jsonld = [
 
 <!-- ============== PAGE HERO ============== -->
 <section class="page-hero">
-  <div class="wrap">
-    <nav class="crumbs" aria-label="Breadcrumb">
-      {p.crumbs.map((c, i) => (
-        <>
-          {i > 0 && <span class="sep">/</span>}
-          {c.href ? <a href={c.href}>{c.label}</a> : <span class="here">{c.label}</span>}
-        </>
-      ))}
-    </nav>
-    <p class="kicker">{p.kicker}</p>
-    <h1>{p.h1}{p.h1Em && <> <span class="em">{p.h1Em}</span></>}</h1>
-    <p class="sub">{p.sub}</p>
-    <div class="hero-cta">
-      <a href="#quote" class="btn btn-primary">Get My Free Quote <span class="arrow">→</span></a>
+  <div class:list={['wrap', { 'ph-grid': p.heroImage }]}>
+    <div>
+      <nav class="crumbs" aria-label="Breadcrumb">
+        {p.crumbs.map((c, i) => (
+          <>
+            {i > 0 && <span class="sep">/</span>}
+            {c.href ? <a href={c.href}>{c.label}</a> : <span class="here">{c.label}</span>}
+          </>
+        ))}
+      </nav>
+      <p class="kicker">{p.kicker}</p>
+      <h1>{p.h1}{p.h1Em && <> <span class="em">{p.h1Em}</span></>}</h1>
+      <p class="sub">{p.sub}</p>
+      <div class="hero-cta">
+        <a href="#quote" class="btn btn-primary">Get My Free Quote <span class="arrow">→</span></a>
+        <a href={SITE.phoneTel} class="btn btn-ghost">Call {SITE.phoneDisplay}</a>
+      </div>
+      <div class="hero-badges">
+        <span class="hbadge"><span class="tick">✓</span> 2-Year Warranty</span>
+        <span class="hbadge"><span class="tick">✓</span> Satisfaction Guaranteed</span>
+        <span class="hbadge"><span class="tick">✓</span> On Schedule, Every Time</span>
+        <span class="hbadge"><span class="tick">✓</span> 15 Years of Local Experience</span>
+      </div>
     </div>
-    <div class="hero-badges">
-      <span class="hbadge"><span class="tick">✓</span> 2-Year Warranty</span>
-      <span class="hbadge"><span class="tick">✓</span> Satisfaction Guaranteed</span>
-      <span class="hbadge"><span class="tick">✓</span> On Schedule, Every Time</span>
-      <span class="hbadge"><span class="tick">✓</span> 15 Years of Local Experience</span>
-    </div>
+    {p.heroImage && (
+      <div class="page-hero-media reveal">
+        <img src={p.heroImage.src} width={p.heroImage.width} height={p.heroImage.height} alt={p.heroImage.alt} fetchpriority="high" decoding="async" />
+      </div>
+    )}
+  </div>
+</section>
+
+<!-- ============== TRUST STRIP ============== -->
+<section class="trust">
+  <div class="wrap trust-row">
+    <div class="trust-item"><span class="num">15</span><span class="lbl"><strong>Years of experience</strong>Hundreds of concrete jobs across the GTA</span></div>
+    <div class="trust-item"><span class="num">2</span><span class="lbl"><strong>Year warranty</strong>We stand behind every job we pour</span></div>
+    <div class="trust-item"><span class="num">100%</span><span class="lbl"><strong>Satisfaction</strong>Guaranteed on every project</span></div>
+    <div class="trust-item"><span class="num">◷</span><span class="lbl"><strong>On schedule</strong>We stick to the timeline we agree on</span></div>
   </div>
 </section>
 
@@ -107,6 +126,7 @@ const jsonld = [
           <li><span class="tick">✓</span> Satisfaction guaranteed</li>
         </ul>
         <a href="#quote" class="btn btn-primary">Get My Free Quote</a>
+        <a href={SITE.phoneTel} class="btn btn-ghost">Call {SITE.phoneDisplay}</a>
       </aside>
     </div>
   </div>
@@ -173,6 +193,7 @@ const jsonld = [
     <p class="reveal">{p.finalCtaText}</p>
     <div class="btns reveal">
       <a href="#quote" class="btn btn-light">Get My Free Quote</a>
+      <a href={SITE.phoneTel} class="btn btn-outline-w">Call {SITE.phoneDisplay}</a>
     </div>
   </div>
 </section>
