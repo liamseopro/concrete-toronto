@@ -22,5 +22,8 @@ the site from `docs/` on the `main` branch (custom domain via `docs/CNAME`).
   (`https://n8n.londonseopro.ca/webhook/concrete-toronto-lead`). With JS it is a
   fetch POST that redirects to `/thank-you/` or `/quote-error/`; without JS the
   form does a plain POST and the backend meta-refreshes to `/thank-you/`.
-- `public/sitemap.xml` is static. If you add or remove a page, update it (and
-  `public/llms.txt`) to match.
+- `public/sitemap.xml` is static except `<lastmod>`, which the build
+  regenerates from git history (`scripts/sitemap-lastmod.mjs`, runs before
+  `astro build`). The same dates feed per-page `WebPage.dateModified` schema
+  via `src/data/lastmod.json`. If you add or remove a page, update the sitemap
+  (and `public/llms.txt`) to match; lastmod then takes care of itself.

@@ -22,6 +22,9 @@ interface Props {
 
 import '../styles/global.css';
 import { SITE, businessSchema } from '../data/site.js';
+// Per-page last-modified dates derived from git history at build time by
+// scripts/sitemap-lastmod.mjs; keyed by pathname.
+import lastmod from '../data/lastmod.json';
 
 const {
   title,
@@ -43,9 +46,14 @@ const {
   noindex = false,
 } = Astro.props;
 
+const pageDate = lastmod[Astro.url?.pathname ?? ''];
 const graph = {
   '@context': 'https://schema.org',
-  '@graph': [businessSchema, ...jsonld],
+  '@graph': [
+    businessSchema,
+    ...jsonld,
+    ...(pageDate ? [{ '@type': 'WebPage', dateModified: pageDate }] : []),
+  ],
 };
 ---
 <!DOCTYPE html>
@@ -207,7 +215,7 @@ const graph = {
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Concrete Toronto. All rights reserved.</span>
+      <span>© {new Date().getFullYear()} Concrete Toronto. All rights reserved.</span>
       <span>Concrete · Parging · Serving Toronto &amp; the GTA</span>
     </div>
   </div>
