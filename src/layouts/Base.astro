@@ -125,6 +125,13 @@ const graph = {
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <script type="application/ld+json" set:html={JSON.stringify(graph, null, 2)} />
+
+<!-- Cloudflare Turnstile: the widget in QuoteForm.astro injects a hidden
+     'cf-turnstile-response' input inside #quoteForm automatically. The
+     lsp-lead-agents Worker verifies it on the fetch() path; plain no-JS
+     posts keep relying on the honeypot + spam check (same split as
+     torontoparging.ca). Widget: torontoparging.ca - quote form. -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
